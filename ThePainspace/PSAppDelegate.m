@@ -7,6 +7,9 @@
 //
 
 #import "PSAppDelegate.h"
+
+#import "PSAppearanceConfigurator.h"
+#import "PSDirector.h"
 #import "PSMainViewController.h"
 
 static BOOL PSAppDelegateIsRunningTests(void)
@@ -27,9 +30,12 @@ static BOOL PSAppDelegateIsRunningTests(void)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     if (PSAppDelegateIsRunningTests()) return YES;
+
+    [PSAppearanceConfigurator configure];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.mainViewController = [PSMainViewController new];
+    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:PSMainSequenceIntro];
+    [PSDirector instance].mainViewController = self.mainViewController;
     [self.window setRootViewController:self.mainViewController];
     [self.window makeKeyAndVisible];
     return YES;

@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSMainViewController : UIViewController
+#import "PSTransitioningViewController.h"
+
+typedef NS_ENUM(NSInteger, PSMainSequence) {
+    PSMainSequenceIntro = 0,
+    PSMainSequenceWelcome,
+    PSMainSequenceMessages
+};
+
+@interface PSMainViewController : PSTransitioningViewController
+
+@property (nonatomic) PSMainSequence mainSequence;
+
+- (instancetype)initWithMainSequence:(PSMainSequence)mainSequence;
 
 @end
