@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PSMainViewController.h
 //  ThePainspace
 //
 //  Created by James Ireland on 23/11/2018.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PSMainViewController : UIViewController
 
 @end
-
