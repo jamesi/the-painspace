@@ -35,7 +35,7 @@
 {
     [NSTimer scheduledTimerWithTimeInterval:2.0
     target:self
-    selector:@selector(continueButtonSelected)
+    selector:@selector(continueSlideSequence)
     userInfo:nil
     repeats:NO];
 }
@@ -55,25 +55,21 @@
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _titleLabel.numberOfLines = 0;
     _titleLabel.text = self.title;
     [mainView addSubview:_titleLabel];
     
-    _continueButton = [UIButton new];
-    [_continueButton setTitle:@"Continue" forState:UIControlStateNormal];
-    [_continueButton addTarget:self action:@selector(continueButtonSelected) forControlEvents:UIControlEventTouchUpInside];
-    [mainView addSubview:_continueButton];
-    
-    NSDictionary *views = NSDictionaryOfVariableBindings(_titleLabel, _continueButton);
+    NSDictionary *views = NSDictionaryOfVariableBindings(_titleLabel);
     for (UIView *view in [views allValues]) [view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_titleLabel]-|" options:0 metrics:nil views:views]];
-    [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_continueButton]-|" options:0 metrics:nil views:views]];
-    [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_titleLabel]-[_continueButton]" options:0 metrics:nil views:views]];
+    [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_titleLabel]" options:0 metrics:nil views:views]];
     
-    [mainView addConstraint:[NSLayoutConstraint constraintWithItem:_continueButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:mainView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
+    [mainView addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:mainView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
 }
 
-- (void)continueButtonSelected
+- (void)continueSlideSequence
 {
     [[PSDirector instance] continueAppSequence];
 }

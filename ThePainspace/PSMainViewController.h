@@ -15,6 +15,11 @@ typedef NS_ENUM(NSInteger, PSMainSequence) {
     PSMainSequenceIntro1,
     PSMainSequenceIntro2,
     PSMainSequenceIntro3,
+    PSMainSequenceIntro4,
+    PSMainSequenceIntro5,
+    PSMainSequenceIntro6,
+    PSMainSequenceIntro7,
+    PSMainSequenceIntro8,
     PSMainSequenceWelcome,
     PSMainSequenceMessages
 };
