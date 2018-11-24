@@ -64,12 +64,20 @@
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Messages" bundle: nil];
             MessagesViewController *messagesViewController = (MessagesViewController *)[storyboard instantiateViewControllerWithIdentifier: @"MessagesViewController"];
             
+            // Parse the sample messages
+            MessageDefParser *messageDefParser = [MessageDefParser alloc];
+            NSArray *messageDefinitions = [messageDefParser getSampleMessages];
+            
+            
             // Setup the messages view controller
-            NSArray *messages;
-            Message *firstMessage = [[Message alloc] initWithText: @"Sample message 1" timestamp: [NSDate date]];
-            Message *secondMessage = [[Message alloc] initWithText: @"This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message" timestamp: [NSDate date]];
-            messages = [NSArray arrayWithObjects: firstMessage, secondMessage, nil];
-            messagesViewController.messages = messages;
+            NSMutableArray *messagesToDisplay = [NSMutableArray new];
+            for (int i=0; i < [messageDefinitions count]; i++) {
+                MessageDef *currentMessageDef = (MessageDef *)[messageDefinitions objectAtIndex: i];
+                Message *currentMessage = [[Message alloc] initWithText: currentMessageDef.content timestamp: [NSDate date]];
+                [messagesToDisplay addObject: currentMessage];
+            }
+            
+            messagesViewController.messages = messagesToDisplay;
             return messagesViewController;
         }
     }

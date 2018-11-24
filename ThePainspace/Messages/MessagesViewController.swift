@@ -31,12 +31,6 @@ import UIKit
         tableView.tableFooterView = UIView()
     }
     
-    // MARK: - UITableViewDelegate
-    
-    
-    
-    
-    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

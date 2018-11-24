@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */; };
-		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
-		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
-		1AC1176F21A8E9F50011892F /* 35mm.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1176621A8E6520011892F /* 35mm.otf */; };
 		1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806476B21A8D02400D77935 /* Date+Extensions.swift */; };
 		1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806476E21A8D05500D77935 /* MessageTableViewCell.swift */; };
 		1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477021A8D05A00D77935 /* MessagesViewController.swift */; };
 		1806477321A8D06900D77935 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1806477221A8D06900D77935 /* MessageTableViewCell.xib */; };
 		1806477521A8D07F00D77935 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477421A8D07F00D77935 /* Message.swift */; };
 		1806477921A8DC7900D77935 /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1806477821A8DC7900D77935 /* Messages.storyboard */; };
+		1806477C21A9104800D77935 /* sample-messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 1806477B21A9104800D77935 /* sample-messages.json */; };
+		1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477D21A9110500D77935 /* MessageDefParser.swift */; };
+		1806478021A911BE00D77935 /* MessageDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477F21A911BE00D77935 /* MessageDef.swift */; };
+		1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */; };
+		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
+		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
+		1AC1176F21A8E9F50011892F /* 35mm.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1176621A8E6520011892F /* 35mm.otf */; };
 		1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE421A7863B003F4431 /* Assets.xcassets */; };
 		1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */; };
 		1AF64CEB21A7863B003F4431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64CEA21A7863B003F4431 /* main.m */; };
@@ -44,12 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWelcomeViewController.h; sourceTree = "<group>"; };
-		1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWelcomeViewController.m; sourceTree = "<group>"; };
-		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1AC1176621A8E6520011892F /* 35mm.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 35mm.otf; sourceTree = "<group>"; };
-		1AC1176C21A8E8E70011892F /* PSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFont.m; sourceTree = "<group>"; };
-		1AC1176D21A8E8E70011892F /* PSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFont.h; sourceTree = "<group>"; };
 		1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePainspace-Bridging-Header.h"; sourceTree = "<group>"; };
 		1806476B21A8D02400D77935 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		1806476E21A8D05500D77935 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,6 +54,15 @@
 		1806477221A8D06900D77935 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		1806477421A8D07F00D77935 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1806477821A8DC7900D77935 /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
+		1806477B21A9104800D77935 /* sample-messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sample-messages.json"; sourceTree = "<group>"; };
+		1806477D21A9110500D77935 /* MessageDefParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDefParser.swift; sourceTree = "<group>"; };
+		1806477F21A911BE00D77935 /* MessageDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDef.swift; sourceTree = "<group>"; };
+		1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWelcomeViewController.h; sourceTree = "<group>"; };
+		1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWelcomeViewController.m; sourceTree = "<group>"; };
+		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1AC1176621A8E6520011892F /* 35mm.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 35mm.otf; sourceTree = "<group>"; };
+		1AC1176C21A8E8E70011892F /* PSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFont.m; sourceTree = "<group>"; };
+		1AC1176D21A8E8E70011892F /* PSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFont.h; sourceTree = "<group>"; };
 		1AF64CD821A78639003F4431 /* ThePainspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePainspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF64CE421A7863B003F4431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF64CE721A7863B003F4431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +137,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1806477A21A9100B00D77935 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1806477B21A9104800D77935 /* sample-messages.json */,
+				1806477D21A9110500D77935 /* MessageDefParser.swift */,
+				1806477F21A911BE00D77935 /* MessageDef.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1AF64CCF21A78639003F4431 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +168,7 @@
 		1AF64CDA21A78639003F4431 /* ThePainspace */ = {
 			isa = PBXGroup;
 			children = (
+				1806477A21A9100B00D77935 /* Model */,
 				1AC1176621A8E6520011892F /* 35mm.otf */,
 				1806476921A8D01500D77935 /* Extensions */,
 				1806476821A8CFD300D77935 /* Messages */,
@@ -284,6 +301,7 @@
 				1806477321A8D06900D77935 /* MessageTableViewCell.xib in Resources */,
 				1806477921A8DC7900D77935 /* Messages.storyboard in Resources */,
 				1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */,
+				1806477C21A9104800D77935 /* sample-messages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,8 +321,10 @@
 			files = (
 				1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */,
 				1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */,
+				1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */,
 				1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */,
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
+				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
 				1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */,
 				1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */,
 				1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */,
@@ -479,6 +499,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ThePainspace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,6 +521,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ThePainspace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
