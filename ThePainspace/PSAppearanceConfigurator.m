@@ -8,11 +8,17 @@
 
 #import "PSAppearanceConfigurator.h"
 
+#import "PSStyle.h"
+
 @implementation PSAppearanceConfigurator
 
 + (void)configure
-{
-    [[UIButton appearance] setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+{    
+    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:12.0 fillColor:[PSStyle buttonBackgroundColor]];
+    
+    [[UIButton appearance] setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+    [[UIButton appearance] setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];
+    [[UIButton appearance] setContentEdgeInsets:UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0)];
 }
 
 @end

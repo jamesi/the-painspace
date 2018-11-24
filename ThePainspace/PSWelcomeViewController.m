@@ -10,6 +10,7 @@
 
 #import "PSDirector.h"
 #import "PSFont.h"
+#import "PSStyle.h"
 
 @interface PSWelcomeViewController ()
 
@@ -33,12 +34,14 @@
 
     _headingLabel = [UILabel new];
     _headingLabel.font = [PSFont preferredFontForTextStyle:UIFontTextStyleTitle1];
+    _headingLabel.textColor = [PSStyle lightTextColor];
     _headingLabel.textAlignment = NSTextAlignmentCenter;
     _headingLabel.text = NSLocalizedString(@"WELCOME_HEADING", nil);
     [mainView addSubview:_headingLabel];
     
     _bodyLabel = [UILabel new];
     _bodyLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    _bodyLabel.textColor = [PSStyle darkTextColor];
     _bodyLabel.textAlignment = NSTextAlignmentCenter;
     _bodyLabel.numberOfLines = 0;
     _bodyLabel.text = NSLocalizedString(@"WELCOME_BODY", nil);

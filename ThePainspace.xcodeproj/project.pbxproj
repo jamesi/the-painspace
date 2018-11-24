@@ -21,6 +21,8 @@
 		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
 		1AC1176F21A8E9F50011892F /* 35mm.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1176621A8E6520011892F /* 35mm.otf */; };
 		1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178121A96B400011892F /* PSMessageScheduler.m */; };
+		1AC1178521A96E370011892F /* PSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178421A96E370011892F /* PSStyle.m */; };
+		1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178721A96F5F0011892F /* UIColor+PSColor.m */; };
 		1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE421A7863B003F4431 /* Assets.xcassets */; };
 		1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */; };
 		1AF64CEB21A7863B003F4431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64CEA21A7863B003F4431 /* main.m */; };
@@ -66,6 +68,10 @@
 		1AC1176D21A8E8E70011892F /* PSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFont.h; sourceTree = "<group>"; };
 		1AC1178021A96B400011892F /* PSMessageScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMessageScheduler.h; sourceTree = "<group>"; };
 		1AC1178121A96B400011892F /* PSMessageScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMessageScheduler.m; sourceTree = "<group>"; };
+		1AC1178321A96E370011892F /* PSStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSStyle.h; sourceTree = "<group>"; };
+		1AC1178421A96E370011892F /* PSStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSStyle.m; sourceTree = "<group>"; };
+		1AC1178621A96F5F0011892F /* UIColor+PSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+PSColor.h"; sourceTree = "<group>"; };
+		1AC1178721A96F5F0011892F /* UIColor+PSColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PSColor.m"; sourceTree = "<group>"; };
 		1AF64CD821A78639003F4431 /* ThePainspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePainspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF64CE421A7863B003F4431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF64CE721A7863B003F4431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -205,6 +211,10 @@
 				1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */,
 				1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */,
 				1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */,
+				1AC1178321A96E370011892F /* PSStyle.h */,
+				1AC1178421A96E370011892F /* PSStyle.m */,
+				1AC1178621A96F5F0011892F /* UIColor+PSColor.h */,
+				1AC1178721A96F5F0011892F /* UIColor+PSColor.m */,
 			);
 			path = ThePainspace;
 			sourceTree = "<group>";
@@ -326,6 +336,7 @@
 			files = (
 				1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */,
 				1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */,
+				1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */,
 				1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */,
 				1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */,
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
@@ -334,6 +345,7 @@
 				1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */,
 				1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */,
 				1AC1176E21A8E8E70011892F /* PSFont.m in Sources */,
+				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
 				1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */,
 				1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */,
 				1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */,
