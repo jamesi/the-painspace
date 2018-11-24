@@ -28,7 +28,7 @@
     UIView *mainView = [[UIView alloc] init];
     self.view = mainView;
     
-    _backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LaunchBackground"]];
+    _backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"DefaultBackground"]];
     _backgroundImage.contentMode = UIViewContentModeScaleAspectFill;
     [mainView addSubview:_backgroundImage];
 
@@ -37,6 +37,7 @@
     _headingLabel.textColor = [PSStyle lightTextColor];
     _headingLabel.textAlignment = NSTextAlignmentCenter;
     _headingLabel.text = NSLocalizedString(@"WELCOME_HEADING", nil);
+    [_headingLabel setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
     [mainView addSubview:_headingLabel];
     
     _bodyLabel = [UILabel new];
@@ -62,10 +63,10 @@
     [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_headingLabel]-|" options:0 metrics:nil views:views]];
     [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_bodyLabel]-|" options:0 metrics:nil views:views]];
     [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_continueButton]-|" options:0 metrics:nil views:views]];
-    [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_headingLabel]-[_bodyLabel]-[_continueButton]" options:0 metrics:nil views:views]];
+    [mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_headingLabel]-36-[_bodyLabel]-36-[_continueButton]" options:0 metrics:nil views:views]];
     
-    [mainView addConstraint:[_headingLabel.topAnchor constraintEqualToSystemSpacingBelowAnchor:mainView.safeAreaLayoutGuide.topAnchor multiplier:1.0]];
-    [mainView addConstraint:[_continueButton.bottomAnchor constraintEqualToAnchor:mainView.safeAreaLayoutGuide.bottomAnchor]];
+    [mainView addConstraint:[_headingLabel.topAnchor constraintEqualToAnchor:mainView.safeAreaLayoutGuide.topAnchor constant:36.0]];
+    [mainView addConstraint:[_continueButton.bottomAnchor constraintEqualToAnchor:mainView.safeAreaLayoutGuide.bottomAnchor constant:-20.0]];
 }
 
 - (void)continueButtonSelected
