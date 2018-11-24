@@ -9,6 +9,7 @@
 #import "PSWelcomeViewController.h"
 
 #import "PSDirector.h"
+#import "PSFont.h"
 
 @interface PSWelcomeViewController ()
 
@@ -27,7 +28,7 @@
     mainView.backgroundColor = [UIColor orangeColor];
     
     _headingLabel = [UILabel new];
-    _headingLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
+    _headingLabel.font = [PSFont preferredFontForTextStyle:UIFontTextStyleTitle1];
     _headingLabel.textAlignment = NSTextAlignmentCenter;
     _headingLabel.text = NSLocalizedString(@"WELCOME_HEADING", nil);
     [mainView addSubview:_headingLabel];
