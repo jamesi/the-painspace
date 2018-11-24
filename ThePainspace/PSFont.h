@@ -12,6 +12,8 @@
 
 + (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style;
 
++ (UIFont *)preferredFontForMessage;
+
 + (void)logFontNames;
 
 @end

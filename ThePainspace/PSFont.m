@@ -12,8 +12,15 @@
 
 + (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style
 {
+    // arvo (27.5px?)
     UIFont *baseFont = [UIFont fontWithName:@"35mm" size:36.0];
     return [[UIFontMetrics metricsForTextStyle:style] scaledFontForFont:baseFont];
+}
+
++ (UIFont *)preferredFontForMessage
+{
+    // lato regular 15px
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 + (void)logFontNames

@@ -22,6 +22,26 @@
     return [UIColor colorWithRGB:0x5a6978];
 }
 
++ (UIColor *)messageBodyTextColor
+{
+    return [UIColor colorWithRGB:0x47525];
+}
+
++ (UIColor *)messageMetadataTextColor
+{
+    return [UIColor colorWithRGB:0x4d5662];
+}
+
++ (UIColor *)messageBulletColor
+{
+    return [UIColor colorWithRGB:0x8190a5];
+}
+
++ (UIColor *)messageBackgroundColor
+{
+    return [UIColor colorWithRGB:0xe5e9f2];
+}
+
 + (UIColor *)buttonBackgroundColor
 {
     return [UIColor colorWithRGB:0x47525e];

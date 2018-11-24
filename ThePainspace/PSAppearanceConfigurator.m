@@ -8,6 +8,7 @@
 
 #import "PSAppearanceConfigurator.h"
 
+#import "PSFont.h"
 #import "PSStyle.h"
 
 @implementation PSAppearanceConfigurator
@@ -19,6 +20,8 @@
     [[UIButton appearance] setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
     [[UIButton appearance] setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];
     [[UIButton appearance] setContentEdgeInsets:UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0)];
+
+    [[UILabel appearance] setFont:[PSFont preferredFontForTextStyle:UIFontTextStyleBody]];
 }
 
 @end

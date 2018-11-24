@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)darkTextColor;
 
++ (UIColor *)messageBodyTextColor;
+
++ (UIColor *)messageMetadataTextColor;
+
++ (UIColor *)messageBulletColor;
+
++ (UIColor *)messageBackgroundColor;
+
 + (UIColor *)buttonBackgroundColor;
 
 + (UIImage *)resizableImageOfRoundedRectWithCornerRadius:(CGFloat)cornerRadius fillColor:(UIColor *)color;
