@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@import UserNotifications;
 
-@interface PSAppDelegate : UIResponder <UIApplicationDelegate>
+@interface PSAppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (nonatomic) UIWindow *window;
 
