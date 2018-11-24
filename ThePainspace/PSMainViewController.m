@@ -8,6 +8,7 @@
 
 #import "PSMainViewController.h"
 
+#import "PSWelcomeViewController.h"
 #import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"
 
@@ -47,7 +48,7 @@
         case PSMainSequenceIntro3:
             return [[IntroViewController alloc] initWithTitle:@"Intro Screen 3" imageName:@"IntroSlide3"];
         case PSMainSequenceWelcome:
-            return [[PSPlaceholderViewController alloc] initWithTitle:@"Welcome Screen"];
+            return [PSWelcomeViewController new];
         case PSMainSequenceMessages:
             return [[PSPlaceholderViewController alloc] initWithTitle:@"Messages Screen"];
     }

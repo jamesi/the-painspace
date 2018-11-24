@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */; };
+		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
 		1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE421A7863B003F4431 /* Assets.xcassets */; };
 		1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */; };
 		1AF64CEB21A7863B003F4431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64CEA21A7863B003F4431 /* main.m */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWelcomeViewController.h; sourceTree = "<group>"; };
+		1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWelcomeViewController.m; sourceTree = "<group>"; };
+		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1AF64CD821A78639003F4431 /* ThePainspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePainspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF64CE421A7863B003F4431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF64CE721A7863B003F4431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		1AF64CDA21A78639003F4431 /* ThePainspace */ = {
 			isa = PBXGroup;
 			children = (
+				1A18823521A8CA5E00A56A52 /* Localizable.strings */,
 				1AF64CE421A7863B003F4431 /* Assets.xcassets */,
 				1AF64CE921A7863B003F4431 /* Info.plist */,
 				1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */,
@@ -123,6 +129,8 @@
 				1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */,
 				665910C921A8C719006880DE /* IntroViewController.h */,
 				665910CA21A8C77A006880DE /* IntroViewController.m */,
+				1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */,
+				1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */,
 			);
 			path = ThePainspace;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */,
+				1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */,
 				1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +249,7 @@
 				1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */,
 				1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */,
 				1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */,
+				1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */,
 				1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */,
 				1AF64D0B21A7D174003F4431 /* PSPlaceholderViewController.m in Sources */,
 				1AF64CEB21A7863B003F4431 /* main.m in Sources */,
@@ -269,6 +279,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A18823521A8CA5E00A56A52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A18823621A8CA5E00A56A52 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
