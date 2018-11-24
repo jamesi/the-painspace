@@ -41,7 +41,7 @@
     [mainView addSubview:_headingLabel];
     
     _bodyLabel = [UILabel new];
-    _bodyLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    _bodyLabel.font = [PSFont preferredFontForTextStyle:UIFontTextStyleBody];
     _bodyLabel.textColor = [PSStyle darkTextColor];
     _bodyLabel.textAlignment = NSTextAlignmentCenter;
     _bodyLabel.numberOfLines = 0;

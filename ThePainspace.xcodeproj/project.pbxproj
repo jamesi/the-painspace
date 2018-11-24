@@ -18,8 +18,9 @@
 		1806478021A911BE00D77935 /* MessageDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477F21A911BE00D77935 /* MessageDef.swift */; };
 		1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */; };
 		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
+		1A68B38A21AA108A006A787F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38821AA108A006A787F /* Lato-Regular.ttf */; };
+		1A68B38B21AA108A006A787F /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38921AA108A006A787F /* Arvo-Regular.ttf */; };
 		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
-		1AC1176F21A8E9F50011892F /* 35mm.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1176621A8E6520011892F /* 35mm.otf */; };
 		1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178121A96B400011892F /* PSMessageScheduler.m */; };
 		1AC1178521A96E370011892F /* PSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178421A96E370011892F /* PSStyle.m */; };
 		1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178721A96F5F0011892F /* UIColor+PSColor.m */; };
@@ -63,7 +64,8 @@
 		1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWelcomeViewController.h; sourceTree = "<group>"; };
 		1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWelcomeViewController.m; sourceTree = "<group>"; };
 		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1AC1176621A8E6520011892F /* 35mm.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 35mm.otf; sourceTree = "<group>"; };
+		1A68B38821AA108A006A787F /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		1A68B38921AA108A006A787F /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Regular.ttf"; sourceTree = "<group>"; };
 		1AC1176C21A8E8E70011892F /* PSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFont.m; sourceTree = "<group>"; };
 		1AC1176D21A8E8E70011892F /* PSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFont.h; sourceTree = "<group>"; };
 		1AC1178021A96B400011892F /* PSMessageScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMessageScheduler.h; sourceTree = "<group>"; };
@@ -177,7 +179,8 @@
 		1AF64CDA21A78639003F4431 /* ThePainspace */ = {
 			isa = PBXGroup;
 			children = (
-				1AC1176621A8E6520011892F /* 35mm.otf */,
+				1A68B38921AA108A006A787F /* Arvo-Regular.ttf */,
+				1A68B38821AA108A006A787F /* Lato-Regular.ttf */,
 				1AF64CE421A7863B003F4431 /* Assets.xcassets */,
 				1806476921A8D01500D77935 /* Extensions */,
 				1AF64CE921A7863B003F4431 /* Info.plist */,
@@ -311,11 +314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */,
-				1AC1176F21A8E9F50011892F /* 35mm.otf in Resources */,
 				1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */,
+				1A68B38A21AA108A006A787F /* Lato-Regular.ttf in Resources */,
 				1806477321A8D06900D77935 /* MessageTableViewCell.xib in Resources */,
 				1806477921A8DC7900D77935 /* Messages.storyboard in Resources */,
 				1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */,
+				1A68B38B21AA108A006A787F /* Arvo-Regular.ttf in Resources */,
 				1806477C21A9104800D77935 /* sample-messages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

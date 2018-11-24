@@ -12,15 +12,18 @@
 
 + (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style
 {
-    // arvo (27.5px?)
-    UIFont *baseFont = [UIFont fontWithName:@"35mm" size:36.0];
+    CGFloat size = 17.5;
+    if (style == UIFontTextStyleTitle1) {
+        size = 36.0;
+    }
+    UIFont *baseFont = [UIFont fontWithName:@"Arvo" size:size];
     return [[UIFontMetrics metricsForTextStyle:style] scaledFontForFont:baseFont];
 }
 
 + (UIFont *)preferredFontForMessage
 {
-    // lato regular 15px
-    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    UIFont *baseFont = [UIFont fontWithName:@"Lato" size:36.0];
+    return [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody] scaledFontForFont:baseFont];
 }
 
 + (void)logFontNames
