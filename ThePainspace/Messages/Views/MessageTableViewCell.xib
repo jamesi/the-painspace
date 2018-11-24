@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="KGk-i7-Jjw" customClass="MessageTableViewCell" customModule="PainspaceMessages" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="332" height="60.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewT-8I-lv8">
+                        <rect key="frame" x="4" y="4" width="324" height="52.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXu-bO-2W4">
+                                <rect key="frame" x="8" y="24" width="308" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2h-pW-rTc">
+                                <rect key="frame" x="8" y="8" width="308" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H2h-pW-rTc" firstAttribute="leading" secondItem="ewT-8I-lv8" secondAttribute="leading" constant="8" id="A4c-Ne-lxL"/>
+                            <constraint firstItem="H2h-pW-rTc" firstAttribute="top" secondItem="ewT-8I-lv8" secondAttribute="top" constant="8" id="IxB-dd-vVv"/>
+                            <constraint firstAttribute="trailing" secondItem="PXu-bO-2W4" secondAttribute="trailing" constant="8" id="OaB-hO-Iqu"/>
+                            <constraint firstItem="PXu-bO-2W4" firstAttribute="top" secondItem="H2h-pW-rTc" secondAttribute="bottom" constant="8" id="bzh-sA-3uq"/>
+                            <constraint firstItem="PXu-bO-2W4" firstAttribute="leading" secondItem="ewT-8I-lv8" secondAttribute="leading" constant="8" id="euU-cK-crg"/>
+                            <constraint firstAttribute="trailing" secondItem="H2h-pW-rTc" secondAttribute="trailing" constant="8" id="rO7-hs-Utp"/>
+                            <constraint firstAttribute="bottom" secondItem="PXu-bO-2W4" secondAttribute="bottom" constant="8" id="xcB-gu-89E"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ewT-8I-lv8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="BMJ-T5-kaU"/>
+                    <constraint firstAttribute="bottom" secondItem="ewT-8I-lv8" secondAttribute="bottom" constant="4" id="Qid-Jc-hU2"/>
+                    <constraint firstAttribute="trailing" secondItem="ewT-8I-lv8" secondAttribute="trailing" constant="4" id="SWT-ln-Md4"/>
+                    <constraint firstItem="ewT-8I-lv8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="e1r-ku-mBI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="messageBubble" destination="ewT-8I-lv8" id="8As-HO-sHw"/>
+                <outlet property="messageText" destination="PXu-bO-2W4" id="fAU-Pq-bQb"/>
+                <outlet property="messageTime" destination="H2h-pW-rTc" id="a6k-sO-fdu"/>
+            </connections>
+            <point key="canvasLocation" x="147.19999999999999" y="160.56971514242881"/>
+        </tableViewCell>
+    </objects>
+</document>

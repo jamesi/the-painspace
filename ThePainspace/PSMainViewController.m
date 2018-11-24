@@ -11,6 +11,7 @@
 #import "PSWelcomeViewController.h"
 #import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"
+#import "ThePainspace-Swift.h"
 
 @interface PSMainViewController ()
 
@@ -59,8 +60,18 @@
             return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE8", nil)) imageName:@"IntroSlide8"];
         case PSMainSequenceWelcome:
             return [PSWelcomeViewController new];
-        case PSMainSequenceMessages:
-            return [[PSPlaceholderViewController alloc] initWithTitle:@"Messages Screen"];
+        case PSMainSequenceMessages: {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Messages" bundle: nil];
+            MessagesViewController *messagesViewController = (MessagesViewController *)[storyboard instantiateViewControllerWithIdentifier: @"MessagesViewController"];
+            
+            // Setup the messages view controller
+            NSArray *messages;
+            Message *firstMessage = [[Message alloc] initWithText: @"Sample message 1" timestamp: [NSDate date]];
+            Message *secondMessage = [[Message alloc] initWithText: @"This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message" timestamp: [NSDate date]];
+            messages = [NSArray arrayWithObjects: firstMessage, secondMessage, nil];
+            messagesViewController.messages = messages;
+            return messagesViewController;
+        }
     }
 }
 
