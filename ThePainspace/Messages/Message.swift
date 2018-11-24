@@ -5,7 +5,7 @@
 
 import Foundation
 
-@objc class Message: NSObject {
+@objcMembers class Message: NSObject {
     let text: String
     let timestamp: Date
     

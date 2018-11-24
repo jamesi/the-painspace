@@ -9,6 +9,7 @@
 #import "PSMainViewController.h"
 
 #import "PSWelcomeViewController.h"
+#import "PSMessageScheduler.h"
 #import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"
 #import "ThePainspace-Swift.h"
@@ -66,18 +67,13 @@
             
             // Parse the sample messages
             MessageDefParser *messageDefParser = [MessageDefParser alloc];
-            NSArray *messageDefinitions = [messageDefParser getSampleMessages];
-            
-            
+            NSArray *messageDefs = [messageDefParser getSampleMessages];
+
             // Setup the messages view controller
-            NSMutableArray *messagesToDisplay = [NSMutableArray new];
-            for (int i=0; i < [messageDefinitions count]; i++) {
-                MessageDef *currentMessageDef = (MessageDef *)[messageDefinitions objectAtIndex: i];
-                Message *currentMessage = [[Message alloc] initWithText: currentMessageDef.content timestamp: [NSDate date]];
-                [messagesToDisplay addObject: currentMessage];
-            }
-            
-            messagesViewController.messages = messagesToDisplay;
+            PSMessageScheduler *scheduler = [[PSMessageScheduler alloc] initWithMessageDefs:messageDefs scheduleEpoch:[NSDate date]];
+            NSArray *messages = [scheduler historicalMessagesRelativeToTimepoint:[NSDate date]];
+
+            messagesViewController.messages = messages;
             return messagesViewController;
         }
     }
