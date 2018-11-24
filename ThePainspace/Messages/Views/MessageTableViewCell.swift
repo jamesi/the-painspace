@@ -18,7 +18,7 @@ class MessageTableViewCell: UITableViewCell {
     }
     
     func configure(forMessage message: Message) {
-        messageBubble.layer.cornerRadius = 5
+        messageBubble.layer.cornerRadius = 16
         messageBubble.backgroundColor = UIColor.white
         
         messageText.text = message.text
