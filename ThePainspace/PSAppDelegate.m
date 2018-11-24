@@ -34,7 +34,7 @@ static BOOL PSAppDelegateIsRunningTests(void)
     [PSAppearanceConfigurator configure];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:PSMainSequenceIntro];
+    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:PSMainSequenceIntro0];
     [PSDirector instance].mainViewController = self.mainViewController;
     [self.window setRootViewController:self.mainViewController];
     [self.window makeKeyAndVisible];

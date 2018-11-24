@@ -9,6 +9,7 @@
 #import "PSMainViewController.h"
 
 #import "PSPlaceholderViewController.h"
+#import "IntroViewController.h"
 
 @interface PSMainViewController ()
 
@@ -37,8 +38,14 @@
 - (UIViewController *)viewControllerForMainSequence:(PSMainSequence)mainSequence
 {
     switch (mainSequence) {
-        case PSMainSequenceIntro:
-            return [[PSPlaceholderViewController alloc] initWithTitle:@"Intro Screen"];
+        case PSMainSequenceIntro0:
+            return [[IntroViewController alloc] initWithTitle:@"Intro Screen 0" imageName:@"IntroSlide0"];
+        case PSMainSequenceIntro1:
+            return [[IntroViewController alloc] initWithTitle:@"Intro Screen 1" imageName:@"IntroSlide1"];
+        case PSMainSequenceIntro2:
+            return [[IntroViewController alloc] initWithTitle:@"Intro Screen 2" imageName:@"IntroSlide2"];
+        case PSMainSequenceIntro3:
+            return [[IntroViewController alloc] initWithTitle:@"Intro Screen 3" imageName:@"IntroSlide3"];
         case PSMainSequenceWelcome:
             return [[PSPlaceholderViewController alloc] initWithTitle:@"Welcome Screen"];
         case PSMainSequenceMessages:

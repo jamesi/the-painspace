@@ -11,7 +11,10 @@
 #import "PSTransitioningViewController.h"
 
 typedef NS_ENUM(NSInteger, PSMainSequence) {
-    PSMainSequenceIntro = 0,
+    PSMainSequenceIntro0 = 0,
+    PSMainSequenceIntro1,
+    PSMainSequenceIntro2,
+    PSMainSequenceIntro3,
     PSMainSequenceWelcome,
     PSMainSequenceMessages
 };
