@@ -41,7 +41,7 @@
 {
     NSMutableArray<Message *> *messages = [NSMutableArray new];
     for (MessageDef *messageDef in messageDefs) {
-        NSDate *date = [self dateForDayIndex:messageDef.day hours:messageDef.hours relativeToScheduleEpoch:scheduleEpoch];
+        NSDate *date = [self demoDateForDayIndex:messageDef.day hours:messageDef.hours relativeToScheduleEpoch:scheduleEpoch];
         Message *message = [[Message alloc] initWithText:messageDef.content timestamp:date];
         [messages addObject:message];
     }
@@ -58,6 +58,22 @@
     components.day += dayIndex;
     components.hour = hours;
 
+    // prevent the date being earlier than the schedule epoch
+    NSDate *date = [components date];
+    BOOL isBeforeEpoch = date && ([date compare:scheduleEpoch] == NSOrderedAscending);
+    if (isBeforeEpoch) date = scheduleEpoch;
+    
+    return date;
+}
+
+- (NSDate *)demoDateForDayIndex:(NSInteger)dayIndex hours:(NSInteger)hours relativeToScheduleEpoch:(NSDate *)scheduleEpoch
+{
+    NSCalendarUnit units = (NSCalendarUnitCalendar | NSCalendarUnitTimeZone | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:units fromDate:scheduleEpoch];
+
+    // add 20 seconds for each day
+    components.second = dayIndex * 20.0;
+    
     // prevent the date being earlier than the schedule epoch
     NSDate *date = [components date];
     BOOL isBeforeEpoch = date && ([date compare:scheduleEpoch] == NSOrderedAscending);
