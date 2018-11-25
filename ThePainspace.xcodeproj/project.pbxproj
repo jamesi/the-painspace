@@ -20,6 +20,7 @@
 		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
 		1A68B38A21AA108A006A787F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38821AA108A006A787F /* Lato-Regular.ttf */; };
 		1A68B38B21AA108A006A787F /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38921AA108A006A787F /* Arvo-Regular.ttf */; };
+		1A68B38E21AA230B006A787F /* PSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A68B38D21AA230B006A787F /* PSUserDefaults.m */; };
 		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
 		1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178121A96B400011892F /* PSMessageScheduler.m */; };
 		1AC1178521A96E370011892F /* PSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178421A96E370011892F /* PSStyle.m */; };
@@ -67,6 +68,8 @@
 		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A68B38821AA108A006A787F /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		1A68B38921AA108A006A787F /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Regular.ttf"; sourceTree = "<group>"; };
+		1A68B38C21AA230B006A787F /* PSUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSUserDefaults.h; sourceTree = "<group>"; };
+		1A68B38D21AA230B006A787F /* PSUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSUserDefaults.m; sourceTree = "<group>"; };
 		1AC1176C21A8E8E70011892F /* PSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFont.m; sourceTree = "<group>"; };
 		1AC1176D21A8E8E70011892F /* PSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFont.h; sourceTree = "<group>"; };
 		1AC1178021A96B400011892F /* PSMessageScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMessageScheduler.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */,
 				1AF64D0C21A7F9DC003F4431 /* PSTransitioningViewController.h */,
 				1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */,
+				1A68B38C21AA230B006A787F /* PSUserDefaults.h */,
+				1A68B38D21AA230B006A787F /* PSUserDefaults.m */,
 				1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */,
 				1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */,
 				1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */,
@@ -348,6 +353,7 @@
 				1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */,
 				1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */,
 				1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */,
+				1A68B38E21AA230B006A787F /* PSUserDefaults.m in Sources */,
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
 				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
 				1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */,
