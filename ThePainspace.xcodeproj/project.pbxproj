@@ -182,15 +182,13 @@
 		1AF64CDA21A78639003F4431 /* ThePainspace */ = {
 			isa = PBXGroup;
 			children = (
-				6656D6C921AA1A0E00E6ABFE /* PSNotificationScheduler.h */,
-				6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */,
 				1A68B38921AA108A006A787F /* Arvo-Regular.ttf */,
-				1A68B38821AA108A006A787F /* Lato-Regular.ttf */,
 				1AF64CE421A7863B003F4431 /* Assets.xcassets */,
 				1806476921A8D01500D77935 /* Extensions */,
 				1AF64CE921A7863B003F4431 /* Info.plist */,
 				665910C921A8C719006880DE /* IntroViewController.h */,
 				665910CA21A8C77A006880DE /* IntroViewController.m */,
+				1A68B38821AA108A006A787F /* Lato-Regular.ttf */,
 				1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */,
 				1A18823521A8CA5E00A56A52 /* Localizable.strings */,
 				1AF64CEA21A7863B003F4431 /* main.m */,
@@ -210,6 +208,8 @@
 				1AF64D0621A7CFB3003F4431 /* PSMainViewController.m */,
 				1AC1178021A96B400011892F /* PSMessageScheduler.h */,
 				1AC1178121A96B400011892F /* PSMessageScheduler.m */,
+				6656D6C921AA1A0E00E6ABFE /* PSNotificationScheduler.h */,
+				6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */,
 				1AF64D0921A7D174003F4431 /* PSPlaceholderViewController.h */,
 				1AF64D0A21A7D174003F4431 /* PSPlaceholderViewController.m */,
 				1AC1178321A96E370011892F /* PSStyle.h */,
