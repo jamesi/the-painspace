@@ -19,6 +19,7 @@
 
 @interface PSMainViewController ()
 
+@property (nonatomic, readonly) NSMutableArray *observers;
 @property (nonatomic, readonly) PSMessageScheduler *messageScheduler;
 
 @end
@@ -34,6 +35,14 @@
         _mainSequence = mainSequence;
         [self mainSequenceDidChangeTo:_mainSequence];
         [self setViewController:[self viewControllerForMainSequence:_mainSequence] animated:NO];
+        
+        _observers = [NSMutableArray new];
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        NSOperationQueue *queue = [NSOperationQueue mainQueue];
+        __weak __typeof(self) weakSelf = self;
+        [_observers addObject:[center addObserverForName:@"PSMessagesDidChangeNotification" object:nil queue:queue usingBlock:^(NSNotification *note) {
+            [weakSelf messagesDidChange];
+        }]];
     }
     return self;
 }
@@ -98,6 +107,16 @@
         }
         default:
             break;
+    }
+}
+
+- (void)messagesDidChange
+{
+    if ([self.childViewController isKindOfClass:[MessagesViewController class]]) {
+        NSLog(@"**Messages changed");
+        NSArray *messages = [self.messageScheduler historicalMessagesRelativeToTimepoint:[NSDate date]];
+        NSLog(@"** New messages count: %lu", (unsigned long)[messages count]);
+        ((MessagesViewController *)self.childViewController).messages = messages;
     }
 }
 

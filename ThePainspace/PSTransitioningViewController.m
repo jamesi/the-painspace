@@ -14,7 +14,7 @@
 @interface PSTransitioningViewController ()
 
 @property (nonatomic) BOOL transitioning;
-@property (nonatomic) UIViewController *childViewController;
+@property (nonatomic, readwrite) UIViewController *childViewController;
 
 @end
 

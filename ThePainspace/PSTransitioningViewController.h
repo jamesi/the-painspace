@@ -10,6 +10,8 @@
 
 @interface PSTransitioningViewController : UIViewController
 
+@property (nonatomic, readonly) UIViewController *childViewController;
+
 - (void)setViewController:(UIViewController *)viewController animated:(BOOL)animated;
 
 @end
