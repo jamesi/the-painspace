@@ -10,7 +10,6 @@
 #import "PSAppearanceConfigurator.h"
 #import "PSDirector.h"
 #import "PSMainViewController.h"
-#import "PSMessageScheduler.h"
 #import "PSUserDefaults.h"
 
 static BOOL PSAppDelegateIsRunningTests(void)
@@ -38,20 +37,6 @@ static BOOL PSAppDelegateIsRunningTests(void)
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    // *center stores a local reference to the UNUserNotificationCenter
-    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    
-    // assign alert types to options
-    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
-    
-    // assign options to notification
-    [center requestAuthorizationWithOptions:options
-                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                              if (!granted) {
-                                  NSLog(@"Something went wrong");
-                              }
-                          }];
     
     PSMainSequence initialSequence = [PSUserDefaults initialSequence];
     self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:initialSequence];

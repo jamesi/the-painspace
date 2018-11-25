@@ -12,6 +12,7 @@
 #import "PSFont.h"
 #import "PSStyle.h"
 #import "PSUserDefaults.h"
+#import "PSMessageScheduler.h"
 
 @interface PSWelcomeViewController ()
 
@@ -72,8 +73,26 @@
 
 - (void)continueButtonSelected
 {
-    [PSUserDefaults setMessagesScheduleEpoch:[NSDate date]];
-    [[PSDirector instance] continueAppSequence];
+    // *center stores a local reference to the UNUserNotificationCenter
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    
+    // assign alert types to options
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
+    
+    // assign options to notification
+    [center requestAuthorizationWithOptions:options
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              if (granted) {
+                                  dispatch_async(dispatch_get_main_queue(), ^(void){
+                                      [PSUserDefaults setMessagesScheduleEpoch:[NSDate date]];
+                                      [[PSDirector instance] continueAppSequence];
+                                  });
+                              } else {
+                                  NSLog(@"Something went wrong");
+                              }
+                          }];
+    
+    
 }
 
 @end
