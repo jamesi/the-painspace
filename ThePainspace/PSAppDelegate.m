@@ -10,6 +10,7 @@
 #import "PSAppearanceConfigurator.h"
 #import "PSDirector.h"
 #import "PSMainViewController.h"
+#import "PSUserDefaults.h"
 
 static BOOL PSAppDelegateIsRunningTests(void)
 {
@@ -36,7 +37,9 @@ static BOOL PSAppDelegateIsRunningTests(void)
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:PSMainSequenceIntro0];
+    
+    PSMainSequence initialSequence = [PSUserDefaults initialSequence];
+    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:initialSequence];
     [PSDirector instance].mainViewController = self.mainViewController;
     [self.window setRootViewController:self.mainViewController];
     [self.window makeKeyAndVisible];

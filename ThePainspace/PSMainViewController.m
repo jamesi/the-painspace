@@ -14,18 +14,24 @@
 #import "IntroViewController.h"
 #import "ThePainspace-Swift.h"
 #import "PSNotificationScheduler.h"
+#import "PSUserDefaults.h"
 
 @interface PSMainViewController ()
+
+@property (nonatomic, readonly) PSMessageScheduler *messageScheduler;
 
 @end
 
 @implementation PSMainViewController
+
+@synthesize messageScheduler = _messageScheduler;
 
 - (instancetype)initWithMainSequence:(PSMainSequence)mainSequence
 {
     self = [super init];
     if (self) {
         _mainSequence = mainSequence;
+        [self mainSequenceDidChangeTo:_mainSequence];
         [self setViewController:[self viewControllerForMainSequence:_mainSequence] animated:NO];
     }
     return self;
@@ -35,6 +41,7 @@
 {
     if (mainSequence != _mainSequence) {
         _mainSequence = mainSequence;
+        [self mainSequenceDidChangeTo:_mainSequence];
         [self setViewController:[self viewControllerForMainSequence:_mainSequence] animated:YES];
     }
 }
@@ -66,22 +73,45 @@
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Messages" bundle: nil];
             MessagesViewController *messagesViewController = (MessagesViewController *)[storyboard instantiateViewControllerWithIdentifier: @"MessagesViewController"];
             
-            // Parse the sample messages
-            MessageDefParser *messageDefParser = [MessageDefParser alloc];
-            NSArray *messageDefs = [messageDefParser getSampleMessages];
-
             // Setup the messages view controller
-            PSMessageScheduler *scheduler = [[PSMessageScheduler alloc] initWithMessageDefs:messageDefs scheduleEpoch:[NSDate date]];
-            NSArray *messages = [scheduler historicalMessagesRelativeToTimepoint:[NSDate date]];
+            NSArray *messages = [self.messageScheduler historicalMessagesRelativeToTimepoint:[NSDate date]];
             messagesViewController.messages = messages;
-            
-            NSArray *futureMessages = [scheduler futureMessagesRelativeToTimepoint:[NSDate date]];
-            
-            [PSNotificationScheduler addNotificationRequestsForMessages:futureMessages];
-            
+
             return messagesViewController;
         }
     }
+}
+
+- (void)mainSequenceDidChangeTo:(PSMainSequence)toMainSequence
+{
+    switch (toMainSequence) {
+        case PSMainSequenceWelcome: {
+            [PSUserDefaults setInitialSequence:PSMainSequenceWelcome];
+            break;
+        }
+        case PSMainSequenceMessages: {
+            [PSUserDefaults setInitialSequence:PSMainSequenceMessages];
+            NSArray *futureMessages = [self.messageScheduler futureMessagesRelativeToTimepoint:[NSDate date]];
+            [PSNotificationScheduler addNotificationRequestsForMessages:futureMessages];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (PSMessageScheduler *)messageScheduler
+{
+    if (!_messageScheduler) {
+        
+        // Parse the sample messages
+        MessageDefParser *messageDefParser = [MessageDefParser alloc];
+        NSArray *messageDefs = [messageDefParser getSampleMessages];
+
+        NSDate *scheduleEpoch = [PSUserDefaults messagesScheduleEpoch];
+        _messageScheduler = [[PSMessageScheduler alloc] initWithMessageDefs:messageDefs scheduleEpoch:scheduleEpoch];
+    }
+    return _messageScheduler;
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "PSDirector.h"
 #import "PSFont.h"
 #import "PSStyle.h"
+#import "PSUserDefaults.h"
 
 @interface PSWelcomeViewController ()
 
@@ -71,6 +72,7 @@
 
 - (void)continueButtonSelected
 {
+    [PSUserDefaults setMessagesScheduleEpoch:[NSDate date]];
     [[PSDirector instance] continueAppSequence];
 }
 
