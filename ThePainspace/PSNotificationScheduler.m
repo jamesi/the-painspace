@@ -50,11 +50,11 @@
      
      // assign options to notification
      [center requestAuthorizationWithOptions:options
-                           completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                               if (!granted) {
-                                   NSLog(@"Something went wrong");
-                               }
-                           }];
+       completionHandler:^(BOOL granted, NSError * _Nullable error) {
+           if (!granted) {
+               NSLog(@"Something went wrong");
+           }
+       }];
      
      
      // Notifcation content - set title and body.
@@ -64,7 +64,16 @@
      content.sound = [UNNotificationSound defaultSound];
      
      // Set interval timer
-     UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:5 repeats:NO];
+     //UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:5 repeats:NO];
+     
+     // Convert timestamp value to day object and call trigger
+     NSDateComponents *triggerDate = [[NSCalendar currentCalendar]
+                                      components:NSCalendarUnitYear +
+                                      NSCalendarUnitMonth + NSCalendarUnitDay +
+                                      NSCalendarUnitHour + NSCalendarUnitMinute +
+                                      NSCalendarUnitSecond fromDate:message.timestamp];
+     
+     UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:triggerDate repeats:NO];
      
      // Create notification request with content applied
      NSString *identifier = @"UYLLocalNotification";
