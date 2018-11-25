@@ -25,8 +25,8 @@
     
     // clear previously scheduled messages
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    [center removeAllDeliveredNotifications];
-    [center removeAllPendingNotificationRequests];
+    //[center removeAllDeliveredNotifications];
+    //[center removeAllPendingNotificationRequests];
     
     // parse each message and add to schedule
     [NSMutableArray arrayWithCapacity:[messages count]];
@@ -40,21 +40,10 @@
 
  +(void)dispatchScheduledNotification:(Message *)message {
      
-     NSLog(@"%@", message.text);
+     //NSLog(@"%@", message.text);
+     //NSLog(@"%@", message.timestamp);
      
-     // *center stores a local reference to the UNUserNotificationCenter
      UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-     
-     // assign alert types to options
-     UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
-     
-     // assign options to notification
-     [center requestAuthorizationWithOptions:options
-       completionHandler:^(BOOL granted, NSError * _Nullable error) {
-           if (!granted) {
-               NSLog(@"Something went wrong");
-           }
-       }];
      
      
      // Notifcation content - set title and body.
@@ -63,17 +52,20 @@
      content.body = message.text;
      content.sound = [UNNotificationSound defaultSound];
      
+     
      // Set interval timer
      //UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:5 repeats:NO];
      
      // Convert timestamp value to day object and call trigger
      NSDateComponents *triggerDate = [[NSCalendar currentCalendar]
-                                      components:NSCalendarUnitYear +
-                                      NSCalendarUnitMonth + NSCalendarUnitDay +
-                                      NSCalendarUnitHour + NSCalendarUnitMinute +
-                                      NSCalendarUnitSecond fromDate:message.timestamp];
+                                      components:(NSCalendarUnitTimeZone | NSCalendarUnitYear |
+                                      NSCalendarUnitMonth | NSCalendarUnitDay |
+                                      NSCalendarUnitHour | NSCalendarUnitMinute |
+                                      NSCalendarUnitSecond) fromDate:message.timestamp];
      
-     UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:triggerDate repeats:NO];
+     NSLog(@"%@", triggerDate);
+     
+     UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:triggerDate repeats:YES];
      
      // Create notification request with content applied
      NSString *identifier = @"UYLLocalNotification";
@@ -82,7 +74,7 @@
      // Add notifcation to IOS notification scheduler, with fall back error handler.
      [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
          if (error != nil) {
-             NSLog(@"Something went wrong: %@",error);
+             NSLog(@"Something went wrong: addNotificationRequest failed? %@",error);
          }
      }];
     

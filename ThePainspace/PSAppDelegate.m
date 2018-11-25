@@ -43,6 +43,20 @@ static BOOL PSAppDelegateIsRunningTests(void)
     [PSDirector instance].mainViewController = self.mainViewController;
     [self.window setRootViewController:self.mainViewController];
     [self.window makeKeyAndVisible];
+    
+    // *center stores a local reference to the UNUserNotificationCenter
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    
+    // assign alert types to options
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
+    
+    // assign options to notification
+    [center requestAuthorizationWithOptions:options
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              if (!granted) {
+                                  NSLog(@"Something went wrong");
+                              }
+                          }];
     return YES;
 }
 
