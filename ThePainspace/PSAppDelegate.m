@@ -39,12 +39,6 @@ static BOOL PSAppDelegateIsRunningTests(void)
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    PSMainSequence initialSequence = [PSUserDefaults initialSequence];
-    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:initialSequence];
-    [PSDirector instance].mainViewController = self.mainViewController;
-    [self.window setRootViewController:self.mainViewController];
-    [self.window makeKeyAndVisible];
-    
     // *center stores a local reference to the UNUserNotificationCenter
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
@@ -58,6 +52,14 @@ static BOOL PSAppDelegateIsRunningTests(void)
                                   NSLog(@"Something went wrong");
                               }
                           }];
+    
+    PSMainSequence initialSequence = [PSUserDefaults initialSequence];
+    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:initialSequence];
+    [PSDirector instance].mainViewController = self.mainViewController;
+    [self.window setRootViewController:self.mainViewController];
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

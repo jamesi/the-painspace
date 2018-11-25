@@ -56,7 +56,7 @@
     NSCalendarUnit units = (NSCalendarUnitCalendar | NSCalendarUnitTimeZone | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
     NSDateComponents *components = [[NSCalendar currentCalendar] components:units fromDate:scheduleEpoch];
 
-    components.second = components.second + 5.0 + (sequence * 5.0);
+    components.second = components.second + 5.0 + (sequence * 10.0);
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
