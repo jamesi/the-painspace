@@ -13,6 +13,7 @@
 #import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"
 #import "ThePainspace-Swift.h"
+#import "PSNotificationScheduler.h"
 
 @interface PSMainViewController ()
 
@@ -72,8 +73,12 @@
             // Setup the messages view controller
             PSMessageScheduler *scheduler = [[PSMessageScheduler alloc] initWithMessageDefs:messageDefs scheduleEpoch:[NSDate date]];
             NSArray *messages = [scheduler historicalMessagesRelativeToTimepoint:[NSDate date]];
-
             messagesViewController.messages = messages;
+            
+            NSArray *futureMessages = [scheduler futureMessagesRelativeToTimepoint:[NSDate date]];
+            
+            [PSNotificationScheduler addNotificationRequestsForMessages:futureMessages];
+            
             return messagesViewController;
         }
     }

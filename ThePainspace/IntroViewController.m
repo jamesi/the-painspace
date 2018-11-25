@@ -33,7 +33,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [NSTimer scheduledTimerWithTimeInterval:2.0
+    [NSTimer scheduledTimerWithTimeInterval:0.5
     target:self
     selector:@selector(continueSlideSequence)
     userInfo:nil

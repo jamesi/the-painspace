@@ -36,6 +36,7 @@
 		1AF64D1421A7FB7F003F4431 /* PSFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */; };
 		1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1621A7FEA5003F4431 /* PSAppearanceConfigurator.m */; };
 		1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1921A7FF9C003F4431 /* PSDirector.m */; };
+		6656D6CA21AA1A0E00E6ABFE /* PSNotificationScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */; };
 		665910CB21A8C77A006880DE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665910CA21A8C77A006880DE /* IntroViewController.m */; };
 		665910CC21A8C77A006880DE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665910CA21A8C77A006880DE /* IntroViewController.m */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,8 @@
 		1AF64D1621A7FEA5003F4431 /* PSAppearanceConfigurator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppearanceConfigurator.m; sourceTree = "<group>"; };
 		1AF64D1821A7FF9C003F4431 /* PSDirector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDirector.h; sourceTree = "<group>"; };
 		1AF64D1921A7FF9C003F4431 /* PSDirector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSDirector.m; sourceTree = "<group>"; };
+		6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNotificationScheduler.m; sourceTree = "<group>"; };
+		6656D6C921AA1A0E00E6ABFE /* PSNotificationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNotificationScheduler.h; sourceTree = "<group>"; };
 		665910C921A8C719006880DE /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		665910CA21A8C77A006880DE /* IntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +182,8 @@
 		1AF64CDA21A78639003F4431 /* ThePainspace */ = {
 			isa = PBXGroup;
 			children = (
+				6656D6C921AA1A0E00E6ABFE /* PSNotificationScheduler.h */,
+				6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */,
 				1A68B38921AA108A006A787F /* Arvo-Regular.ttf */,
 				1A68B38821AA108A006A787F /* Lato-Regular.ttf */,
 				1AF64CE421A7863B003F4431 /* Assets.xcassets */,
@@ -351,6 +356,7 @@
 				1AC1176E21A8E8E70011892F /* PSFont.m in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
 				1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */,
+				6656D6CA21AA1A0E00E6ABFE /* PSNotificationScheduler.m in Sources */,
 				1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */,
 				1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */,
 				1AF64D0B21A7D174003F4431 /* PSPlaceholderViewController.m in Sources */,
