@@ -10,6 +10,6 @@
 
 @interface IntroViewController : UIViewController
 
-- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName;
+- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName textColor:(UIColor *)textColor;
 
 @end

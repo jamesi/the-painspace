@@ -15,6 +15,7 @@
 #import "ThePainspace-Swift.h"
 #import "PSNotificationScheduler.h"
 #import "PSUserDefaults.h"
+#import "PSStyle.h"
 
 @interface PSMainViewController ()
 
@@ -50,23 +51,23 @@
 {
     switch (mainSequence) {
         case PSMainSequenceIntro0:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE0", nil)) imageName:@"IntroSlide0"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE0", nil)) imageName:@"IntroSlide0" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro1:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE1", nil)) imageName:@"IntroSlide1"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE1", nil)) imageName:@"IntroSlide1" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro2:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE2", nil)) imageName:@"IntroSlide2"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE2", nil)) imageName:@"IntroSlide2" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro3:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE3", nil)) imageName:@"IntroSlide3"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE3", nil)) imageName:@"IntroSlide3" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro4:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE4", nil)) imageName:@"IntroSlide4"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE4", nil)) imageName:@"IntroSlide4" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro5:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE5", nil)) imageName:@"IntroSlide5"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE5", nil)) imageName:@"IntroSlide5" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro6:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE6", nil)) imageName:@"IntroSlide6"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE6", nil)) imageName:@"IntroSlide6" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro7:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE7", nil)) imageName:@"IntroSlide7"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE7", nil)) imageName:@"IntroSlide7" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro8:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE8", nil)) imageName:@"IntroSlide8"];
+            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE8", nil)) imageName:@"IntroSlide8" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceWelcome:
             return [PSWelcomeViewController new];
         case PSMainSequenceMessages: {

@@ -9,24 +9,27 @@
 #import <UIKit/UIKit.h>
 #import "IntroViewController.h"
 #import "PSDirector.h"
+#import "PSFont.h"
 
 @interface IntroViewController ()
 
 @property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic, readonly) UIButton *continueButton;
 @property (nonatomic) NSString *imageName;
+@property (nonatomic) UIColor *textColor;
 @property (nonatomic) NSTimer *timer;
 
 @end
 
 @implementation IntroViewController
 
-- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName
+- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName textColor:(UIColor *)textColor
 {
     self = [super init];
     if (self) {
         self.title = title;
         self.imageName = imageName;
+        self.textColor = textColor;
     }
     return self;
 }
@@ -53,11 +56,13 @@
     mainView.backgroundColor = [UIColor blueColor];
     
     _titleLabel = [UILabel new];
-    _titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
+    _titleLabel.font = [PSFont preferredFontForTextStyle:UIFontTextStyleTitle1];
+    _titleLabel.textColor = self.textColor;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _titleLabel.numberOfLines = 0;
     _titleLabel.text = self.title;
+    
     [mainView addSubview:_titleLabel];
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_titleLabel);
