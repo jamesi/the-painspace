@@ -10,6 +10,7 @@
 #import "PSAppearanceConfigurator.h"
 #import "PSDirector.h"
 #import "PSMainViewController.h"
+#import "PSMessageScheduler.h"
 #import "PSUserDefaults.h"
 
 static BOOL PSAppDelegateIsRunningTests(void)
@@ -64,6 +65,7 @@ static BOOL PSAppDelegateIsRunningTests(void)
 - (void)userNotificationCenter:(UNUserNotificationCenter* )center willPresentNotification:(UNNotification* )notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
     NSLog(@"TODO - use callback to handle update of messages.");
     completionHandler(UNNotificationPresentationOptionAlert);
+
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PSMessagesDidChangeNotification" object:nil];
 }

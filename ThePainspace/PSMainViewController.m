@@ -20,7 +20,7 @@
 @interface PSMainViewController ()
 
 @property (nonatomic, readonly) NSMutableArray *observers;
-@property (nonatomic, readonly) PSMessageScheduler *messageScheduler;
+
 
 @end
 

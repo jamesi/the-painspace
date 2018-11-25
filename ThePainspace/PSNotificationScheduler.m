@@ -25,20 +25,22 @@
     
     // clear previously scheduled messages
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    //[center removeAllDeliveredNotifications];
-    //[center removeAllPendingNotificationRequests];
+    [center removeAllDeliveredNotifications];
+    [center removeAllPendingNotificationRequests];
     
     // parse each message and add to schedule
     [NSMutableArray arrayWithCapacity:[messages count]];
     
     // dispatch notification for each message recieved
+    int i = 0;
     for(Message * message in messages) {
-        [self dispatchScheduledNotification:message];
+        NSString *identifier = [NSString stringWithFormat:@"%d", i++];
+        [self dispatchScheduledNotification:message withIdentifier:identifier];
     }
     
 }
 
- +(void)dispatchScheduledNotification:(Message *)message {
++(void)dispatchScheduledNotification:(Message *)message withIdentifier:(NSString *)identifier {
      
      //NSLog(@"%@", message.text);
      //NSLog(@"%@", message.timestamp);
@@ -67,8 +69,7 @@
      
      UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:triggerDate repeats:YES];
      
-     // Create notification request with content applied
-     NSString *identifier = @"UYLLocalNotification";
+     // Create notification request with content applied + identifier
      UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier content:content trigger:trigger];
      
      // Add notifcation to IOS notification scheduler, with fall back error handler.
