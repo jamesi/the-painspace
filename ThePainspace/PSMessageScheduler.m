@@ -40,12 +40,33 @@
 - (NSArray<Message *> *)messagesScheduleFromMessageDefs:(NSArray *)messageDefs scheduleEpoch:(NSDate *)scheduleEpoch
 {
     NSMutableArray<Message *> *messages = [NSMutableArray new];
+    int i = 0;
     for (MessageDef *messageDef in messageDefs) {
-        NSDate *date = [self demoDateForDayIndex:messageDef.day hours:messageDef.hours relativeToScheduleEpoch:scheduleEpoch];
+        NSDate *date = [self demoDateForMessageSequence:i relativeToScheduleEpoch:scheduleEpoch];
         Message *message = [[Message alloc] initWithText:messageDef.content timestamp:date];
         [messages addObject:message];
+        i++;
     }
     return messages;
+}
+
+- (NSDate *)demoDateForMessageSequence:(NSInteger)sequence relativeToScheduleEpoch:(NSDate *)scheduleEpoch
+{
+    // derive 00:00 hours on day of epoch
+    NSCalendarUnit units = (NSCalendarUnitCalendar | NSCalendarUnitTimeZone | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:units fromDate:scheduleEpoch];
+
+    components.second = components.second + 20.0 + (sequence * 60.0);
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterFullStyle;
+    
+    NSDate *date = [components date];
+    
+    NSLog(@"** Scheduling for %@", [dateFormatter stringFromDate:date]);
+    
+    return date;
 }
 
 - (NSDate *)dateForDayIndex:(NSInteger)dayIndex hours:(NSInteger)hours relativeToScheduleEpoch:(NSDate *)scheduleEpoch
@@ -72,13 +93,18 @@
     NSDateComponents *components = [[NSCalendar currentCalendar] components:units fromDate:scheduleEpoch];
 
     // add 20 seconds for each day
-    components.second = dayIndex * 20.0;
+    components.second = components.second + 10.0 + dayIndex * 20.0;
     
     // prevent the date being earlier than the schedule epoch
     NSDate *date = [components date];
     BOOL isBeforeEpoch = date && ([date compare:scheduleEpoch] == NSOrderedAscending);
     if (isBeforeEpoch) date = scheduleEpoch;
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterFullStyle;
+    NSLog(@"** Scheduling for %@", [dateFormatter stringFromDate:date]);
+
     return date;
 }
 
