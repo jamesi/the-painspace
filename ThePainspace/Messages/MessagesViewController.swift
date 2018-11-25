@@ -12,6 +12,7 @@ import UIKit
     @objc var messages: [Message] = [] {
         didSet {
             tableView?.reloadData()
+            tableView?.scrollToRow(at: IndexPath(row: messages.count - 1, section: 0), at: .bottom, animated: true)
         }
     }
     
@@ -31,6 +32,12 @@ import UIKit
         tableView.tableFooterView = UIView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.scrollToRow(at: IndexPath(row: messages.count - 1, section: 0), at: .bottom, animated: false)
+    }
+    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,11 +46,8 @@ import UIKit
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MessageTableViewCell.self), for: indexPath) as! MessageTableViewCell
-        
         let message = messages[indexPath.row]
-        
         cell.configure(forMessage: message)
-        
         return cell
     }
 }
