@@ -15,7 +15,7 @@
 
 + (void)configure
 {    
-    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:12.0 fillColor:[PSStyle buttonBackgroundColor]];
+    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:8.0 fillColor:[PSStyle buttonBackgroundColor]];
     
     [[UIButton appearance] setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
     [[UIButton appearance] setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];

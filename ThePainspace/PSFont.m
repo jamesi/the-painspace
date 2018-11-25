@@ -14,7 +14,7 @@
 {
     CGFloat size = 17.5;
     if (style == UIFontTextStyleTitle1) {
-        size = 36.0;
+        size = 27.5;
     }
     UIFont *baseFont = [UIFont fontWithName:@"Arvo" size:size];
     return [[UIFontMetrics metricsForTextStyle:style] scaledFontForFont:baseFont];

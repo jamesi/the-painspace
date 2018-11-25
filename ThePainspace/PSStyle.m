@@ -14,7 +14,7 @@
 
 + (UIColor *)lightTextColor
 {
-    return [UIColor whiteColor]; // todo: should not be pure white
+    return [UIColor colorWithRGB:0xfbfbfb];
 }
 
 + (UIColor *)darkTextColor

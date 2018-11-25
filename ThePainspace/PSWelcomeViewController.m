@@ -46,12 +46,12 @@
     _bodyLabel.textAlignment = NSTextAlignmentCenter;
     _bodyLabel.numberOfLines = 0;
     _bodyLabel.text = NSLocalizedString(@"WELCOME_BODY", nil);
-    
     [mainView addSubview:_bodyLabel];
     
     _continueButton = [UIButton new];
-    [_continueButton setTitle:@"Continue" forState:UIControlStateNormal];
+    [_continueButton setTitle:NSLocalizedString(@"WELCOME_CONTINUE", nil) forState:UIControlStateNormal];
     [_continueButton addTarget:self action:@selector(continueButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+    _continueButton.titleLabel.font = [PSFont preferredFontForTextStyle:UIFontTextStyleBody];
     [mainView addSubview:_continueButton];
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_backgroundImage, _headingLabel, _bodyLabel, _continueButton);
