@@ -24,7 +24,7 @@
 
 + (UIColor *)messageBodyTextColor
 {
-    return [UIColor colorWithRGB:0x47525];
+    return [UIColor colorWithRGB:0x47525E];
 }
 
 + (UIColor *)messageMetadataTextColor

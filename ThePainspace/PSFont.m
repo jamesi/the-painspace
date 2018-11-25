@@ -22,7 +22,13 @@
 
 + (UIFont *)preferredFontForMessage
 {
-    UIFont *baseFont = [UIFont fontWithName:@"Lato" size:36.0];
+    UIFont *baseFont = [UIFont fontWithName:@"Lato" size:17.5];
+    return [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody] scaledFontForFont:baseFont];
+}
+
++ (UIFont *)preferredFontForMessageTime
+{
+    UIFont *baseFont = [UIFont fontWithName:@"Lato" size:15.0];
     return [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody] scaledFontForFont:baseFont];
 }
 

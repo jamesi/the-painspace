@@ -14,6 +14,8 @@
 
 + (UIFont *)preferredFontForMessage;
 
++ (UIFont *)preferredFontForMessageTime;
+
 + (void)logFontNames;
 
 @end
