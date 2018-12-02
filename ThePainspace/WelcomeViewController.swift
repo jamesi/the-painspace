@@ -30,7 +30,7 @@ import UIKit
         backgroundImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
         
         let headingLabel = UILabel()
-        headingLabel.font = PSFont.preferredFont(forTextStyle: .title1)
+        headingLabel.font = PSStyle.preferredFont(forTextStyle: .title1)
         headingLabel.textColor = PSStyle.lightTextColor()
         headingLabel.textAlignment = .center
         headingLabel.numberOfLines = 0;
@@ -38,7 +38,7 @@ import UIKit
         headingLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         let bodyLabel = UILabel()
-        bodyLabel.font = PSFont.preferredFont(forTextStyle: .body)
+        bodyLabel.font = PSStyle.preferredFont(forTextStyle: .body)
         bodyLabel.textColor = PSStyle.darkTextColor()
         bodyLabel.textAlignment = .center
         bodyLabel.numberOfLines = 0;
@@ -46,7 +46,7 @@ import UIKit
         
         let continueButton = UIButton()
         continueButton.setTitle(NSLocalizedString("WELCOME_CONTINUE", comment: ""), for: .normal)
-        continueButton.titleLabel?.font = PSFont.preferredFont(forTextStyle: .body)
+        continueButton.titleLabel?.font = PSStyle.preferredFont(forTextStyle: .body)
         continueButton.addTarget(self, action: #selector(continueButtonSelected), for: .touchUpInside)
         
         let stackView = UIStackView.init(arrangedSubviews: [headingLabel, bodyLabel, continueButton])

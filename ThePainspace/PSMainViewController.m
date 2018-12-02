@@ -8,7 +8,6 @@
 
 #import "PSMainViewController.h"
 
-#import "PSWelcomeViewController.h"
 #import "PSMessageScheduler.h"
 #import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"

@@ -26,11 +26,11 @@ class MessageTableViewCell: UITableViewCell {
         messageBubble.backgroundColor = PSStyle.messageBackgroundColor()
         
         messageText.text = message.text
-        messageText.font = PSFont.preferredFontForMessage()
+        messageText.font = PSStyle.preferredFontForMessage()
         messageText.textColor = PSStyle.messageBodyTextColor()
         
         messageTime.text = message.timestamp.messageFormatted
-        messageTime.font = PSFont.preferredFontForMessageTime()
+        messageTime.font = PSStyle.preferredFontForMessageTime()
         messageTime.textColor = PSStyle.messageMetadataTextColor()
     }
 }

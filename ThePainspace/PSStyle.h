@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PSStyle : NSObject
 
++ (void)configureAppearance;
+
+@end
+
+@interface PSStyle (Color)
+
 + (UIColor *)lightTextColor;
 
 + (UIColor *)darkTextColor;
@@ -25,6 +31,24 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)messageBackgroundColor;
 
 + (UIColor *)buttonBackgroundColor;
+
++ (UIColor *)colorWithRGB:(NSInteger)value;
+
+@end
+
+@interface PSStyle (Font)
+
++ (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style;
+
++ (UIFont *)preferredFontForMessage;
+
++ (UIFont *)preferredFontForMessageTime;
+
++ (void)logFontNames;
+
+@end
+
+@interface PSStyle (Image)
 
 + (UIImage *)resizableImageOfRoundedRectWithCornerRadius:(CGFloat)cornerRadius fillColor:(UIColor *)color;
 

@@ -21,10 +21,8 @@
 		1A68B38B21AA108A006A787F /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38921AA108A006A787F /* Arvo-Regular.ttf */; };
 		1A68B38E21AA230B006A787F /* PSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A68B38D21AA230B006A787F /* PSUserDefaults.m */; };
 		1AB666FD21B3845E00CD6C62 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477021A8D05A00D77935 /* MessagesViewController.swift */; };
-		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
 		1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178121A96B400011892F /* PSMessageScheduler.m */; };
 		1AC1178521A96E370011892F /* PSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178421A96E370011892F /* PSStyle.m */; };
-		1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178721A96F5F0011892F /* UIColor+PSColor.m */; };
 		1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE421A7863B003F4431 /* Assets.xcassets */; };
 		1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */; };
 		1AF64CEB21A7863B003F4431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64CEA21A7863B003F4431 /* main.m */; };
@@ -35,7 +33,6 @@
 		1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */; };
 		1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */; };
 		1AF64D1421A7FB7F003F4431 /* PSFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */; };
-		1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1621A7FEA5003F4431 /* PSAppearanceConfigurator.m */; };
 		1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1921A7FF9C003F4431 /* PSDirector.m */; };
 		6656D6CA21AA1A0E00E6ABFE /* PSNotificationScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */; };
 		665910CB21A8C77A006880DE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665910CA21A8C77A006880DE /* IntroViewController.m */; };
@@ -70,14 +67,10 @@
 		1A68B38921AA108A006A787F /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Regular.ttf"; sourceTree = "<group>"; };
 		1A68B38C21AA230B006A787F /* PSUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSUserDefaults.h; sourceTree = "<group>"; };
 		1A68B38D21AA230B006A787F /* PSUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSUserDefaults.m; sourceTree = "<group>"; };
-		1AC1176C21A8E8E70011892F /* PSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFont.m; sourceTree = "<group>"; };
-		1AC1176D21A8E8E70011892F /* PSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFont.h; sourceTree = "<group>"; };
 		1AC1178021A96B400011892F /* PSMessageScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMessageScheduler.h; sourceTree = "<group>"; };
 		1AC1178121A96B400011892F /* PSMessageScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMessageScheduler.m; sourceTree = "<group>"; };
 		1AC1178321A96E370011892F /* PSStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSStyle.h; sourceTree = "<group>"; };
 		1AC1178421A96E370011892F /* PSStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSStyle.m; sourceTree = "<group>"; };
-		1AC1178621A96F5F0011892F /* UIColor+PSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+PSColor.h"; sourceTree = "<group>"; };
-		1AC1178721A96F5F0011892F /* UIColor+PSColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PSColor.m"; sourceTree = "<group>"; };
 		1AF64CD821A78639003F4431 /* ThePainspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePainspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF64CE421A7863B003F4431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF64CE721A7863B003F4431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,8 +91,6 @@
 		1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSTransitioningContext.m; sourceTree = "<group>"; };
 		1AF64D1221A7FB7F003F4431 /* PSFadeTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSFadeTransition.h; sourceTree = "<group>"; };
 		1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSFadeTransition.m; sourceTree = "<group>"; };
-		1AF64D1521A7FEA5003F4431 /* PSAppearanceConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppearanceConfigurator.h; sourceTree = "<group>"; };
-		1AF64D1621A7FEA5003F4431 /* PSAppearanceConfigurator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppearanceConfigurator.m; sourceTree = "<group>"; };
 		1AF64D1821A7FF9C003F4431 /* PSDirector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDirector.h; sourceTree = "<group>"; };
 		1AF64D1921A7FF9C003F4431 /* PSDirector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSDirector.m; sourceTree = "<group>"; };
 		6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNotificationScheduler.m; sourceTree = "<group>"; };
@@ -200,14 +191,10 @@
 				1A52763321B258A0004C48C2 /* ModelNetworking.playground */,
 				1AF64D0421A7CFB3003F4431 /* PSAppDelegate.h */,
 				1AF64D0521A7CFB3003F4431 /* PSAppDelegate.m */,
-				1AF64D1521A7FEA5003F4431 /* PSAppearanceConfigurator.h */,
-				1AF64D1621A7FEA5003F4431 /* PSAppearanceConfigurator.m */,
 				1AF64D1821A7FF9C003F4431 /* PSDirector.h */,
 				1AF64D1921A7FF9C003F4431 /* PSDirector.m */,
 				1AF64D1221A7FB7F003F4431 /* PSFadeTransition.h */,
 				1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */,
-				1AC1176D21A8E8E70011892F /* PSFont.h */,
-				1AC1176C21A8E8E70011892F /* PSFont.m */,
 				1AF64D0321A7CFB3003F4431 /* PSMainViewController.h */,
 				1AF64D0621A7CFB3003F4431 /* PSMainViewController.m */,
 				1AC1178021A96B400011892F /* PSMessageScheduler.h */,
@@ -225,8 +212,6 @@
 				1A68B38C21AA230B006A787F /* PSUserDefaults.h */,
 				1A68B38D21AA230B006A787F /* PSUserDefaults.m */,
 				1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */,
-				1AC1178621A96F5F0011892F /* UIColor+PSColor.h */,
-				1AC1178721A96F5F0011892F /* UIColor+PSColor.m */,
 				1A52766021B350E6004C48C2 /* WelcomeViewController.swift */,
 			);
 			path = ThePainspace;
@@ -351,7 +336,6 @@
 				1AB666FD21B3845E00CD6C62 /* MessagesViewController.swift in Sources */,
 				1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */,
 				1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */,
-				1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */,
 				1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */,
 				1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */,
 				1A68B38E21AA230B006A787F /* PSUserDefaults.m in Sources */,
@@ -360,10 +344,8 @@
 				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
 				1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */,
 				1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */,
-				1AC1176E21A8E8E70011892F /* PSFont.m in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
 				6656D6CA21AA1A0E00E6ABFE /* PSNotificationScheduler.m in Sources */,
-				1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */,
 				1AF64D0B21A7D174003F4431 /* PSPlaceholderViewController.m in Sources */,
 				1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */,
 				1806477521A8D07F00D77935 /* Message.swift in Sources */,

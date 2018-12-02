@@ -7,9 +7,9 @@
 //
 
 #import "PSAppDelegate.h"
-#import "PSAppearanceConfigurator.h"
 #import "PSDirector.h"
 #import "PSMainViewController.h"
+#import "PSStyle.h"
 #import "PSUserDefaults.h"
 
 static BOOL PSAppDelegateIsRunningTests(void)
@@ -31,7 +31,7 @@ static BOOL PSAppDelegateIsRunningTests(void)
 
     if (PSAppDelegateIsRunningTests()) return YES;
 
-    [PSAppearanceConfigurator configure];
+    [PSStyle configureAppearance];
     
     // Foreground notification utility method
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];

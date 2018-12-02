@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IntroViewController.h"
 #import "PSDirector.h"
-#import "PSFont.h"
+#import "PSStyle.h"
 
 @interface IntroViewController ()
 
@@ -56,7 +56,7 @@
     mainView.backgroundColor = [UIColor blueColor];
     
     _titleLabel = [UILabel new];
-    _titleLabel.font = [PSFont preferredFontForTextStyle:UIFontTextStyleTitle1];
+    _titleLabel.font = [PSStyle preferredFontForTextStyle:UIFontTextStyleTitle1];
     _titleLabel.textColor = self.textColor;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
