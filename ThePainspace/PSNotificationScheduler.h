@@ -6,15 +6,15 @@
 //  Copyright © 2018 The Painspace. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@import UserNotifications;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PSNotificationScheduler : NSObject
 
-+(void)addNotificationRequestsForMessages:(NSArray *) messages;
++ (void)requestAuthorization;
+
++ (void)addNotificationRequestsForMessages:(NSArray *) messages;
 
 @end
 

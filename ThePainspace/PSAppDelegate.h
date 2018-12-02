@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import UserNotifications;
+#import <UserNotifications/UserNotifications.h>
 
 @interface PSAppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 

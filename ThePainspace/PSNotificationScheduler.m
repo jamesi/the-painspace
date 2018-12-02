@@ -7,18 +7,24 @@
 //
 
 #import "PSNotificationScheduler.h"
+
 #import <ThePainspace-Swift.h>
-
-@interface PSNotificationScheduler()
-
-
-@property (nonatomic) NSTimer *timer;
-
-@end
+#import <UserNotifications/UserNotifications.h>
 
 @implementation PSNotificationScheduler
 
-+(void)addNotificationRequestsForMessages:(NSArray *) messages
++ (void)requestAuthorization
+{
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
+    [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (!granted) {
+            NSLog(@"User notifications permission declined");
+        }
+    }];
+}
+
++ (void)addNotificationRequestsForMessages:(NSArray *) messages
 {
     
     NSLog(@"PSNotificationScheduler invoked");

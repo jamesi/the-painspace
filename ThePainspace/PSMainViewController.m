@@ -12,7 +12,6 @@
 #import "PSMessageScheduler.h"
 #import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"
-#import "ThePainspace-Swift.h"
 #import "PSNotificationScheduler.h"
 #import "PSUserDefaults.h"
 #import "PSStyle.h"
@@ -20,7 +19,6 @@
 @interface PSMainViewController ()
 
 @property (nonatomic, readonly) NSMutableArray *observers;
-
 
 @end
 
@@ -77,8 +75,11 @@
             return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE7", nil)) imageName:@"cloud8" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro8:
             return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE8", nil)) imageName:@"cloud9" textColor:[PSStyle darkTextColor]];
-        case PSMainSequenceWelcome:
-            return [PSWelcomeViewController new];
+        case PSMainSequenceWelcome: {
+            WelcomeViewController *viewController = [WelcomeViewController new];
+            viewController.delegate = self;
+            return viewController;
+        }
         case PSMainSequenceMessages: {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Messages" bundle: nil];
             MessagesViewController *messagesViewController = (MessagesViewController *)[storyboard instantiateViewControllerWithIdentifier: @"MessagesViewController"];
@@ -132,6 +133,15 @@
         _messageScheduler = [[PSMessageScheduler alloc] initWithMessageDefs:messageDefs scheduleEpoch:scheduleEpoch];
     }
     return _messageScheduler;
+}
+
+#pragma mark <WelcomeViewControllerDelegate>
+
+- (void)welcomeViewControllerDidSelectContinue
+{
+    [PSUserDefaults setMessagesScheduleEpoch:[NSDate new]];
+    [PSNotificationScheduler requestAuthorization];
+    self.mainSequence = PSMainSequenceMessages;
 }
 
 @end

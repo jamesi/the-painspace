@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PSMessageScheduler.h"
 #import "PSTransitioningViewController.h"
 
-#import "PSMessageScheduler.h"
+#import "ThePainspace-Swift.h"
 
 typedef NS_ENUM(NSInteger, PSMainSequence) {
     PSMainSequenceIntro0 = 0,
@@ -26,7 +27,8 @@ typedef NS_ENUM(NSInteger, PSMainSequence) {
     PSMainSequenceMessages
 };
 
-@interface PSMainViewController : PSTransitioningViewController
+@interface PSMainViewController : PSTransitioningViewController <WelcomeViewControllerDelegate>
+
 @property (nonatomic, readonly) PSMessageScheduler *messageScheduler;
 
 @property (nonatomic) PSMainSequence mainSequence;

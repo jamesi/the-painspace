@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806476B21A8D02400D77935 /* Date+Extensions.swift */; };
 		1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806476E21A8D05500D77935 /* MessageTableViewCell.swift */; };
-		1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477021A8D05A00D77935 /* MessagesViewController.swift */; };
 		1806477321A8D06900D77935 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1806477221A8D06900D77935 /* MessageTableViewCell.xib */; };
 		1806477521A8D07F00D77935 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477421A8D07F00D77935 /* Message.swift */; };
 		1806477921A8DC7900D77935 /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1806477821A8DC7900D77935 /* Messages.storyboard */; };
 		1806477C21A9104800D77935 /* sample-messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 1806477B21A9104800D77935 /* sample-messages.json */; };
 		1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477D21A9110500D77935 /* MessageDefParser.swift */; };
 		1806478021A911BE00D77935 /* MessageDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477F21A911BE00D77935 /* MessageDef.swift */; };
-		1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */; };
 		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
+		1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52766021B350E6004C48C2 /* WelcomeViewController.swift */; };
 		1A68B38A21AA108A006A787F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38821AA108A006A787F /* Lato-Regular.ttf */; };
 		1A68B38B21AA108A006A787F /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A68B38921AA108A006A787F /* Arvo-Regular.ttf */; };
 		1A68B38E21AA230B006A787F /* PSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A68B38D21AA230B006A787F /* PSUserDefaults.m */; };
+		1AB666FD21B3845E00CD6C62 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477021A8D05A00D77935 /* MessagesViewController.swift */; };
 		1AC1176E21A8E8E70011892F /* PSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1176C21A8E8E70011892F /* PSFont.m */; };
 		1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178121A96B400011892F /* PSMessageScheduler.m */; };
 		1AC1178521A96E370011892F /* PSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178421A96E370011892F /* PSStyle.m */; };
@@ -63,9 +63,9 @@
 		1806477B21A9104800D77935 /* sample-messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sample-messages.json"; sourceTree = "<group>"; };
 		1806477D21A9110500D77935 /* MessageDefParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDefParser.swift; sourceTree = "<group>"; };
 		1806477F21A911BE00D77935 /* MessageDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDef.swift; sourceTree = "<group>"; };
-		1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWelcomeViewController.h; sourceTree = "<group>"; };
-		1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWelcomeViewController.m; sourceTree = "<group>"; };
 		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1A52763321B258A0004C48C2 /* ModelNetworking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ModelNetworking.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1A52766021B350E6004C48C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1A68B38821AA108A006A787F /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		1A68B38921AA108A006A787F /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Regular.ttf"; sourceTree = "<group>"; };
 		1A68B38C21AA230B006A787F /* PSUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSUserDefaults.h; sourceTree = "<group>"; };
@@ -197,6 +197,7 @@
 				1AF64CEA21A7863B003F4431 /* main.m */,
 				1806476821A8CFD300D77935 /* Messages */,
 				1806477A21A9100B00D77935 /* Model */,
+				1A52763321B258A0004C48C2 /* ModelNetworking.playground */,
 				1AF64D0421A7CFB3003F4431 /* PSAppDelegate.h */,
 				1AF64D0521A7CFB3003F4431 /* PSAppDelegate.m */,
 				1AF64D1521A7FEA5003F4431 /* PSAppearanceConfigurator.h */,
@@ -223,11 +224,10 @@
 				1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */,
 				1A68B38C21AA230B006A787F /* PSUserDefaults.h */,
 				1A68B38D21AA230B006A787F /* PSUserDefaults.m */,
-				1A18823221A8C6C100A56A52 /* PSWelcomeViewController.h */,
-				1A18823321A8C6C100A56A52 /* PSWelcomeViewController.m */,
 				1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */,
 				1AC1178621A96F5F0011892F /* UIColor+PSColor.h */,
 				1AC1178721A96F5F0011892F /* UIColor+PSColor.m */,
+				1A52766021B350E6004C48C2 /* WelcomeViewController.swift */,
 			);
 			path = ThePainspace;
 			sourceTree = "<group>";
@@ -348,22 +348,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB666FD21B3845E00CD6C62 /* MessagesViewController.swift in Sources */,
 				1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */,
 				1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */,
 				1AC1178821A96F5F0011892F /* UIColor+PSColor.m in Sources */,
 				1806477E21A9110500D77935 /* MessageDefParser.swift in Sources */,
 				1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */,
 				1A68B38E21AA230B006A787F /* PSUserDefaults.m in Sources */,
+				1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */,
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
 				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
 				1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */,
 				1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */,
-				1A18823421A8C6C100A56A52 /* PSWelcomeViewController.m in Sources */,
 				1AC1176E21A8E8E70011892F /* PSFont.m in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
-				1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */,
 				6656D6CA21AA1A0E00E6ABFE /* PSNotificationScheduler.m in Sources */,
-				1806477121A8D05A00D77935 /* MessagesViewController.swift in Sources */,
 				1AF64D1721A7FEA5003F4431 /* PSAppearanceConfigurator.m in Sources */,
 				1AF64D0B21A7D174003F4431 /* PSPlaceholderViewController.m in Sources */,
 				1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */,

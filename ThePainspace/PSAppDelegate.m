@@ -44,7 +44,6 @@ static BOOL PSAppDelegateIsRunningTests(void)
     [self.window setRootViewController:self.mainViewController];
     [self.window makeKeyAndVisible];
     
-    
     return YES;
 }
 
