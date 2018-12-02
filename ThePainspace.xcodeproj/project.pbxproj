@@ -29,7 +29,6 @@
 		1AF64CF521A7863C003F4431 /* ThePainspaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64CF421A7863C003F4431 /* ThePainspaceTests.m */; };
 		1AF64D0721A7CFB3003F4431 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D0521A7CFB3003F4431 /* PSAppDelegate.m */; };
 		1AF64D0821A7CFB3003F4431 /* PSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D0621A7CFB3003F4431 /* PSMainViewController.m */; };
-		1AF64D0B21A7D174003F4431 /* PSPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D0A21A7D174003F4431 /* PSPlaceholderViewController.m */; };
 		1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */; };
 		1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */; };
 		1AF64D1421A7FB7F003F4431 /* PSFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */; };
@@ -83,8 +82,6 @@
 		1AF64D0421A7CFB3003F4431 /* PSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		1AF64D0521A7CFB3003F4431 /* PSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
 		1AF64D0621A7CFB3003F4431 /* PSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMainViewController.m; sourceTree = "<group>"; };
-		1AF64D0921A7D174003F4431 /* PSPlaceholderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPlaceholderViewController.h; sourceTree = "<group>"; };
-		1AF64D0A21A7D174003F4431 /* PSPlaceholderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSPlaceholderViewController.m; sourceTree = "<group>"; };
 		1AF64D0C21A7F9DC003F4431 /* PSTransitioningViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSTransitioningViewController.h; sourceTree = "<group>"; };
 		1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSTransitioningViewController.m; sourceTree = "<group>"; };
 		1AF64D0F21A7FB70003F4431 /* PSTransitioningContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSTransitioningContext.h; sourceTree = "<group>"; };
@@ -201,8 +198,6 @@
 				1AC1178121A96B400011892F /* PSMessageScheduler.m */,
 				6656D6C921AA1A0E00E6ABFE /* PSNotificationScheduler.h */,
 				6656D6C821AA1A0D00E6ABFE /* PSNotificationScheduler.m */,
-				1AF64D0921A7D174003F4431 /* PSPlaceholderViewController.h */,
-				1AF64D0A21A7D174003F4431 /* PSPlaceholderViewController.m */,
 				1AC1178321A96E370011892F /* PSStyle.h */,
 				1AC1178421A96E370011892F /* PSStyle.m */,
 				1AF64D0F21A7FB70003F4431 /* PSTransitioningContext.h */,
@@ -346,7 +341,6 @@
 				1AF64D1A21A7FF9C003F4431 /* PSDirector.m in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
 				6656D6CA21AA1A0E00E6ABFE /* PSNotificationScheduler.m in Sources */,
-				1AF64D0B21A7D174003F4431 /* PSPlaceholderViewController.m in Sources */,
 				1AC1178221A96B410011892F /* PSMessageScheduler.m in Sources */,
 				1806477521A8D07F00D77935 /* Message.swift in Sources */,
 				1AF64CEB21A7863B003F4431 /* main.m in Sources */,

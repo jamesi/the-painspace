@@ -9,7 +9,6 @@
 #import "PSMainViewController.h"
 
 #import "PSMessageScheduler.h"
-#import "PSPlaceholderViewController.h"
 #import "IntroViewController.h"
 #import "PSNotificationScheduler.h"
 #import "PSUserDefaults.h"

@@ -31,5 +31,5 @@ final class Webservice {
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 Webservice().load(resource: messagesResource) { result in
-    print(result)
+    print(result!)
 }
