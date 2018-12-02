@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "IntroViewController.h"
 #import "PSMessageScheduler.h"
 #import "PSTransitioningViewController.h"
 
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSInteger, PSMainSequence) {
     PSMainSequenceMessages
 };
 
-@interface PSMainViewController : PSTransitioningViewController <WelcomeViewControllerDelegate>
+@interface PSMainViewController : PSTransitioningViewController <IntroViewControllerDelegate, WelcomeViewControllerDelegate>
 
 @property (nonatomic, readonly) PSMessageScheduler *messageScheduler;
 

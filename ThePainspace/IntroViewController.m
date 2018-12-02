@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "IntroViewController.h"
-#import "PSDirector.h"
 #import "PSStyle.h"
 
 @interface IntroViewController ()
@@ -76,7 +75,7 @@
 
 - (void)continueSlideSequence
 {
-    [[PSDirector instance] continueAppSequence];
+    [self.delegate introViewControllerDidFinish];
 }
 
 @end

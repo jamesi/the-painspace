@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol IntroViewControllerDelegate <NSObject>
+
+- (void)introViewControllerDidFinish;
+
+@end
+
 @interface IntroViewController : UIViewController
+
+@property (nonatomic, weak) id <IntroViewControllerDelegate> delegate;
 
 - (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName textColor:(UIColor *)textColor;
 

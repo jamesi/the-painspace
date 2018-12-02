@@ -54,41 +54,40 @@
 
 - (UIViewController *)viewControllerForMainSequence:(PSMainSequence)mainSequence
 {
+    UIViewController *viewController;
     switch (mainSequence) {
         case PSMainSequenceIntro0:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE0", nil)) imageName:@"cloud1" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro1:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE1", nil)) imageName:@"cloud2" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro2:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE2", nil)) imageName:@"cloud3" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro3:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE3", nil)) imageName:@"cloud4" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro4:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE4", nil)) imageName:@"cloud5" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro5:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE5", nil)) imageName:@"cloud6" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro6:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE6", nil)) imageName:@"cloud7" textColor:[PSStyle darkTextColor]];
         case PSMainSequenceIntro7:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE7", nil)) imageName:@"cloud8" textColor:[PSStyle darkTextColor]];
-        case PSMainSequenceIntro8:
-            return [[IntroViewController alloc] initWithTitle:(NSLocalizedString(@"SLIDE8", nil)) imageName:@"cloud9" textColor:[PSStyle darkTextColor]];
+        case PSMainSequenceIntro8: {
+            NSString *titleKey = [NSString stringWithFormat:@"SLIDE%ld", mainSequence];
+            NSString *imageName = [NSString stringWithFormat:@"cloud%ld", mainSequence + 1];
+            IntroViewController *introViewController = [[IntroViewController alloc] initWithTitle:(NSLocalizedString(titleKey, nil)) imageName:imageName textColor:[PSStyle darkTextColor]];
+            introViewController.delegate = self;
+            viewController = introViewController;
+            break;
+        }
         case PSMainSequenceWelcome: {
-            WelcomeViewController *viewController = [WelcomeViewController new];
-            viewController.delegate = self;
-            return viewController;
+            WelcomeViewController *welcomeViewController = [WelcomeViewController new];
+            welcomeViewController.delegate = self;
+            viewController = welcomeViewController;
+            break;
         }
         case PSMainSequenceMessages: {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Messages" bundle: nil];
             MessagesViewController *messagesViewController = (MessagesViewController *)[storyboard instantiateViewControllerWithIdentifier: @"MessagesViewController"];
-            
-            // Setup the messages view controller
             NSArray *messages = [self.messageScheduler historicalMessagesRelativeToTimepoint:[NSDate date]];
             messagesViewController.messages = messages;
-
-            return messagesViewController;
+            viewController = messagesViewController;
+            break;
         }
     }
+    return viewController;
 }
 
 - (void)mainSequenceDidChangeTo:(PSMainSequence)toMainSequence
@@ -133,13 +132,29 @@
     return _messageScheduler;
 }
 
+- (void)continueMainSequence
+{
+    PSMainSequence sequence = self.mainSequence;
+    if (sequence < PSMainSequenceMessages) {
+        sequence++;
+    }
+    self.mainSequence = sequence;
+}
+
+#pragma mark <IntroViewControllerDelegate>
+
+- (void)introViewControllerDidFinish
+{
+    [self continueMainSequence];
+}
+
 #pragma mark <WelcomeViewControllerDelegate>
 
 - (void)welcomeViewControllerDidSelectContinue
 {
     [PSUserDefaults setMessagesScheduleEpoch:[NSDate new]];
     [PSNotificationScheduler requestAuthorization];
-    self.mainSequence = PSMainSequenceMessages;
+    [self continueMainSequence];
 }
 
 @end

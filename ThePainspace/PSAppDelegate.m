@@ -7,7 +7,6 @@
 //
 
 #import "PSAppDelegate.h"
-#import "PSDirector.h"
 #import "PSMainViewController.h"
 #import "PSStyle.h"
 #import "PSUserDefaults.h"
@@ -40,7 +39,6 @@ static BOOL PSAppDelegateIsRunningTests(void)
     
     PSMainSequence initialSequence = [PSUserDefaults initialSequence];
     self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:initialSequence];
-    [PSDirector instance].mainViewController = self.mainViewController;
     [self.window setRootViewController:self.mainViewController];
     [self.window makeKeyAndVisible];
     
