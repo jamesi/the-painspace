@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol IntroViewControllerDelegate <NSObject>
 
 - (void)introViewControllerDidFinish;
@@ -21,3 +23,5 @@
 - (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName textColor:(UIColor *)textColor;
 
 @end
+
+NS_ASSUME_NONNULL_END

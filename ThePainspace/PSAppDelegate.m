@@ -7,9 +7,10 @@
 //
 
 #import "PSAppDelegate.h"
-#import "PSMainViewController.h"
 #import "PSStyle.h"
-#import "PSUserDefaults.h"
+#import "PSTransitioningViewController.h"
+
+#import "ThePainspace-Swift.h"
 
 static BOOL PSAppDelegateIsRunningTests(void)
 {
@@ -20,7 +21,7 @@ static BOOL PSAppDelegateIsRunningTests(void)
 
 @interface PSAppDelegate ()
 
-@property (nonatomic) PSMainViewController *mainViewController;
+@property (nonatomic) Coordinator *coordinator;
 
 @end
 
@@ -31,27 +32,16 @@ static BOOL PSAppDelegateIsRunningTests(void)
     if (PSAppDelegateIsRunningTests()) return YES;
 
     [PSStyle configureAppearance];
-    
-    // Foreground notification utility method
-    [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
-    
+        
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    PSMainSequence initialSequence = [PSUserDefaults initialSequence];
-    self.mainViewController = [[PSMainViewController alloc] initWithMainSequence:initialSequence];
-    [self.window setRootViewController:self.mainViewController];
+    PSTransitioningViewController *mainViewController = [PSTransitioningViewController new];
+    self.coordinator = [[Coordinator alloc] init:mainViewController];
+    
+    [self.window setRootViewController:mainViewController];
     [self.window makeKeyAndVisible];
     
     return YES;
-}
-
-// Call back when notification is sent whilst app in foreground.
-- (void)userNotificationCenter:(UNUserNotificationCenter* )center willPresentNotification:(UNNotification* )notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
-    NSLog(@"TODO - use callback to handle update of messages.");
-    completionHandler(UNNotificationPresentationOptionAlert);
-
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"PSMessagesDidChangeNotification" object:nil];
 }
 
 @end
