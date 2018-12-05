@@ -21,6 +21,7 @@
 		1AB6670121B3C53400CD6C62 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670021B3C53400CD6C62 /* Store.swift */; };
 		1AB6670321B4F08E00CD6C62 /* MessagesSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670221B4F08E00CD6C62 /* MessagesSchedule.swift */; };
 		1AB6670521B64D3F00CD6C62 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670421B64D3F00CD6C62 /* UserNotificationService.swift */; };
+		1AB6670821B7FCA800CD6C62 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670721B7FCA800CD6C62 /* IntroViewController.swift */; };
 		1AC1178521A96E370011892F /* PSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1178421A96E370011892F /* PSStyle.m */; };
 		1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE421A7863B003F4431 /* Assets.xcassets */; };
 		1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */; };
@@ -30,8 +31,6 @@
 		1AF64D0E21A7F9DC003F4431 /* PSTransitioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */; };
 		1AF64D1121A7FB70003F4431 /* PSTransitioningContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */; };
 		1AF64D1421A7FB7F003F4431 /* PSFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */; };
-		665910CB21A8C77A006880DE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665910CA21A8C77A006880DE /* IntroViewController.m */; };
-		665910CC21A8C77A006880DE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665910CA21A8C77A006880DE /* IntroViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +60,7 @@
 		1AB6670021B3C53400CD6C62 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		1AB6670221B4F08E00CD6C62 /* MessagesSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesSchedule.swift; sourceTree = "<group>"; };
 		1AB6670421B64D3F00CD6C62 /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
+		1AB6670721B7FCA800CD6C62 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		1AC1178321A96E370011892F /* PSStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSStyle.h; sourceTree = "<group>"; };
 		1AC1178421A96E370011892F /* PSStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSStyle.m; sourceTree = "<group>"; };
 		1AF64CD821A78639003F4431 /* ThePainspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePainspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +79,6 @@
 		1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSTransitioningContext.m; sourceTree = "<group>"; };
 		1AF64D1221A7FB7F003F4431 /* PSFadeTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSFadeTransition.h; sourceTree = "<group>"; };
 		1AF64D1321A7FB7F003F4431 /* PSFadeTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSFadeTransition.m; sourceTree = "<group>"; };
-		665910C921A8C719006880DE /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
-		665910CA21A8C77A006880DE /* IntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +161,7 @@
 				1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */,
 				1806476921A8D01500D77935 /* Extensions */,
 				1AF64CE921A7863B003F4431 /* Info.plist */,
-				665910C921A8C719006880DE /* IntroViewController.h */,
-				665910CA21A8C77A006880DE /* IntroViewController.m */,
+				1AB6670721B7FCA800CD6C62 /* IntroViewController.swift */,
 				1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */,
 				1A18823521A8CA5E00A56A52 /* Localizable.strings */,
 				1AF64CEA21A7863B003F4431 /* main.m */,
@@ -313,6 +310,7 @@
 				1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */,
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
 				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
+				1AB6670821B7FCA800CD6C62 /* IntroViewController.swift in Sources */,
 				1AB6670321B4F08E00CD6C62 /* MessagesSchedule.swift in Sources */,
 				1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
@@ -320,7 +318,6 @@
 				1AB6670121B3C53400CD6C62 /* Store.swift in Sources */,
 				1AF64CEB21A7863B003F4431 /* main.m in Sources */,
 				1AF64D1421A7FB7F003F4431 /* PSFadeTransition.m in Sources */,
-				665910CB21A8C77A006880DE /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF64CF521A7863C003F4431 /* ThePainspaceTests.m in Sources */,
-				665910CC21A8C77A006880DE /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,10 +73,10 @@ import UserNotifications
     func viewControllerFor(screen: Screen) -> UIViewController {
         switch screen {
         case .intro0, .intro1, .intro2, .intro3, .intro4, .intro5,. intro6, .intro7:
-            let titleKey = String(format: "SLIDE%ld", screen.rawValue)
-            let title = NSLocalizedString(titleKey, comment: "")
+            let textKey = String(format: "SLIDE%ld", screen.rawValue)
+            let text = NSLocalizedString(textKey, comment: "")
             let imageName = String(format: "cloud%ld", screen.rawValue + 1);
-            let viewController = IntroViewController(title: title, imageName: imageName, textColor: UIColor.white)
+            let viewController = IntroViewController(text: text, imageName: imageName, textColor: PSStyle.lightTextColor())
             viewController.delegate = self
             return viewController
         case .welcome:

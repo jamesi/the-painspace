@@ -15,7 +15,8 @@ extension Date {
 extension DateFormatter {
     static let messageTime: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         return dateFormatter
     }()

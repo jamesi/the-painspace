@@ -7,6 +7,14 @@ import UIKit
 
 @objc class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Parameters
     
     @objc var messages: [Message] = [] {

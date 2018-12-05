@@ -76,4 +76,14 @@
     }
 }
 
+- (UIViewController *)childViewControllerForStatusBarHidden
+{
+    return self.childViewController;
+}
+
+- (UIViewController *)childViewControllerForStatusBarStyle
+{
+    return self.childViewController;
+}
+
 @end

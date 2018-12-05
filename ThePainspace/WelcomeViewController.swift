@@ -16,6 +16,10 @@ import UIKit
 
     @objc weak var delegate: WelcomeViewControllerDelegate? = nil
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func loadView() {
         let mainView = UIView()
         self.view = mainView
@@ -64,7 +68,7 @@ import UIKit
         let margins = view.layoutMarginsGuide
         stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 12.0).isActive = true
         stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -12.0).isActive = true
-        stackView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 28.0).isActive = true
+        stackView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 36.0).isActive = true
         stackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -28.0).isActive = true
     }
     
