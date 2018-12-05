@@ -20,22 +20,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewT-8I-lv8">
-                        <rect key="frame" x="16" y="0.0" width="302" height="142.5"/>
+                        <rect key="frame" x="12" y="0.0" width="310" height="140.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXu-bO-2W4">
-                                <rect key="frame" x="16" y="41" width="270" height="85.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXu-bO-2W4">
+                                <rect key="frame" x="14" y="105" width="282" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.56674307584762573" green="0.62236732244491577" blue="0.69727247953414917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2h-pW-rTc">
-                                <rect key="frame" x="40" y="15" width="246" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2h-pW-rTc">
+                                <rect key="frame" x="38" y="77" width="258" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.44165986776351929" green="0.48537516593933105" blue="0.54363805055618286" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-QZ-bIF">
-                                <rect key="frame" x="16" y="16" width="16" height="16"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-QZ-bIF">
+                                <rect key="frame" x="14" y="77.5" width="16" height="16"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="907-sm-F7d"/>
@@ -45,23 +45,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.8974042534828186" green="0.91317194700241089" blue="0.9504961371421814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="H2h-pW-rTc" firstAttribute="centerY" secondItem="FGI-QZ-bIF" secondAttribute="centerY" id="Gjn-YB-qUz"/>
+                            <constraint firstItem="H2h-pW-rTc" firstAttribute="top" secondItem="ewT-8I-lv8" secondAttribute="top" constant="12" id="JvQ-As-5IC"/>
                             <constraint firstItem="H2h-pW-rTc" firstAttribute="leading" secondItem="FGI-QZ-bIF" secondAttribute="trailing" constant="8" id="O4c-Sc-GR6"/>
-                            <constraint firstAttribute="trailing" secondItem="PXu-bO-2W4" secondAttribute="trailing" constant="16" id="OaB-hO-Iqu"/>
-                            <constraint firstItem="FGI-QZ-bIF" firstAttribute="top" secondItem="ewT-8I-lv8" secondAttribute="top" constant="16" id="Qo0-7q-DFv"/>
-                            <constraint firstItem="PXu-bO-2W4" firstAttribute="top" secondItem="H2h-pW-rTc" secondAttribute="bottom" constant="8" id="bzh-sA-3uq"/>
-                            <constraint firstItem="PXu-bO-2W4" firstAttribute="leading" secondItem="ewT-8I-lv8" secondAttribute="leading" constant="16" id="euU-cK-crg"/>
-                            <constraint firstAttribute="trailing" secondItem="H2h-pW-rTc" secondAttribute="trailing" constant="16" id="rO7-hs-Utp"/>
-                            <constraint firstAttribute="bottom" secondItem="PXu-bO-2W4" secondAttribute="bottom" constant="16" id="xcB-gu-89E"/>
-                            <constraint firstItem="FGI-QZ-bIF" firstAttribute="leading" secondItem="ewT-8I-lv8" secondAttribute="leading" constant="16" id="yob-P2-EXH"/>
+                            <constraint firstAttribute="trailing" secondItem="PXu-bO-2W4" secondAttribute="trailing" constant="14" id="OaB-hO-Iqu"/>
+                            <constraint firstItem="PXu-bO-2W4" firstAttribute="top" secondItem="H2h-pW-rTc" secondAttribute="bottom" constant="10" id="bzh-sA-3uq"/>
+                            <constraint firstItem="PXu-bO-2W4" firstAttribute="leading" secondItem="ewT-8I-lv8" secondAttribute="leading" constant="14" id="euU-cK-crg"/>
+                            <constraint firstAttribute="trailing" secondItem="H2h-pW-rTc" secondAttribute="trailing" constant="14" id="rO7-hs-Utp"/>
+                            <constraint firstItem="H2h-pW-rTc" firstAttribute="centerY" secondItem="FGI-QZ-bIF" secondAttribute="centerY" constant="0.5" id="w5P-tN-loa"/>
+                            <constraint firstAttribute="bottom" secondItem="PXu-bO-2W4" secondAttribute="bottom" constant="15" id="xcB-gu-89E"/>
+                            <constraint firstItem="FGI-QZ-bIF" firstAttribute="leading" secondItem="ewT-8I-lv8" secondAttribute="leading" constant="14" id="yob-P2-EXH"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ewT-8I-lv8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BMJ-T5-kaU"/>
-                    <constraint firstAttribute="bottom" secondItem="ewT-8I-lv8" secondAttribute="bottom" constant="16" id="Qid-Jc-hU2"/>
-                    <constraint firstAttribute="trailing" secondItem="ewT-8I-lv8" secondAttribute="trailing" constant="16" id="SWT-ln-Md4"/>
-                    <constraint firstItem="ewT-8I-lv8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="e1r-ku-mBI"/>
+                    <constraint firstAttribute="bottom" secondItem="ewT-8I-lv8" secondAttribute="bottom" constant="18" id="Qid-Jc-hU2"/>
+                    <constraint firstAttribute="trailing" secondItem="ewT-8I-lv8" secondAttribute="trailing" constant="12" id="SWT-ln-Md4"/>
+                    <constraint firstItem="ewT-8I-lv8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="e1r-ku-mBI"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,7 +72,7 @@
                 <outlet property="messageText" destination="PXu-bO-2W4" id="fAU-Pq-bQb"/>
                 <outlet property="messageTime" destination="H2h-pW-rTc" id="a6k-sO-fdu"/>
             </connections>
-            <point key="canvasLocation" x="148.80000000000001" y="204.64767616191907"/>
+            <point key="canvasLocation" x="-38.399999999999999" y="148.87556221889056"/>
         </tableViewCell>
     </objects>
 </document>

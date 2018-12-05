@@ -22,7 +22,7 @@ class MessageTableViewCell: UITableViewCell {
         icon.layer.cornerRadius = 5
         icon.backgroundColor = PSStyle.messageBulletColor()
         
-        messageBubble.layer.cornerRadius = 16
+        messageBubble.layer.cornerRadius = 14
         messageBubble.backgroundColor = PSStyle.messageBackgroundColor()
         
         messageText.text = message.text

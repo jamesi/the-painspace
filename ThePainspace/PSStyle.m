@@ -12,7 +12,7 @@
 
 + (void)configureAppearance
 {
-    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:8.0 fillColor:[PSStyle buttonBackgroundColor]];
+    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:14.0 fillColor:[PSStyle buttonBackgroundColor]];
     [[UIButton appearance] setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
     [[UIButton appearance] setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];
     [[UIButton appearance] setContentEdgeInsets:UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0)];
@@ -30,19 +30,19 @@
     if (style == UIFontTextStyleTitle1) {
         size = 27.5;
     }
-    UIFont *baseFont = [UIFont fontWithName:@"Arvo" size:size];
+    UIFont *baseFont = [UIFont fontWithName:@"Avenir-Roman" size:size];
     return [[UIFontMetrics metricsForTextStyle:style] scaledFontForFont:baseFont];
 }
 
 + (UIFont *)preferredFontForMessage
 {
-    UIFont *baseFont = [UIFont fontWithName:@"Lato" size:17.5];
+    UIFont *baseFont = [UIFont fontWithName:@"Avenir-Roman" size:15];
     return [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody] scaledFontForFont:baseFont];
 }
 
 + (UIFont *)preferredFontForMessageTime
 {
-    UIFont *baseFont = [UIFont fontWithName:@"Lato" size:15.0];
+    UIFont *baseFont = [UIFont fontWithName:@"Avenir-Roman" size:13];
     return [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody] scaledFontForFont:baseFont];
 }
 
@@ -82,7 +82,7 @@
 
 + (UIColor *)messageBulletColor
 {
-    return [self colorWithRGB:0x8190a5];
+    return [self colorWithRGB:0xc0ccd9];
 }
 
 + (UIColor *)messageBackgroundColor
