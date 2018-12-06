@@ -63,6 +63,7 @@ private func instantiateMessages(messageDefs: [MessageDef], start: Date?) -> [Me
     var messages = [Message]()
     if (start != nil) {
         for (index, messageDef) in messageDefs.enumerated() {
+            // todo: store identifier in message
             let date = dateForMessage(index: index, fromStart: start!)
             let message = Message(text: messageDef.content, timestamp: date)
             messages.append(message)

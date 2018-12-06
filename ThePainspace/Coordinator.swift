@@ -39,6 +39,8 @@ import UserNotifications
 
     var observers: [NSObjectProtocol] = []
     
+    weak var messagesViewController: MessagesViewController?
+    
     @objc init(_ rootViewController: PSTransitioningViewController) {
         self.rootViewController = rootViewController
         super.init()
@@ -84,10 +86,11 @@ import UserNotifications
             viewController.delegate = self
             return viewController
         case .messages:
-            let storyboard = UIStoryboard.init(name: "Messages", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
+            let viewController = MessagesViewController()
             viewController.messages = messageScheduler.pastMessagesUntil(date: Date())
-            return viewController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            self.messagesViewController = viewController
+            return navigationController
         }
     }
     
@@ -102,7 +105,7 @@ import UserNotifications
     }
     
     func handleUserNotificationWillPresent() {
-        if let messagesViewController = self.rootViewController.childViewController as? MessagesViewController {
+        if let messagesViewController = self.messagesViewController {
             messagesViewController.messages = messageScheduler.pastMessagesUntil(date: Date())
         }
     }
@@ -111,9 +114,7 @@ import UserNotifications
 extension Coordinator: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
         completionHandler(UNNotificationPresentationOptions.alert)
-        
         handleUserNotificationWillPresent()
     }
     

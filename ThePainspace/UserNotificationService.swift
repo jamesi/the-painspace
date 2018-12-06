@@ -46,6 +46,7 @@ final class UserNotificationService {
         let dateComponents = Calendar.current.dateComponents(MessagesSchedule.calendarUnits, from: message.timestamp)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
+        // todo: use message identifier
         let identifier = UUID().uuidString
         return UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
     }
