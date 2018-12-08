@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)buttonBackgroundColor;
 
++ (UIColor *)navigationBarBackgroundColor;
+
 + (UIColor *)colorWithRGB:(NSInteger)value;
 
 @end
@@ -51,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PSStyle (Image)
 
 + (UIImage *)resizableImageOfRoundedRectWithCornerRadius:(CGFloat)cornerRadius fillColor:(UIColor *)color;
+
++ (UIImage *)scaledImage:(UIImage *)image toWidth:(CGFloat)width;
 
 @end
 

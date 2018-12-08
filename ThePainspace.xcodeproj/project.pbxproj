@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806476B21A8D02400D77935 /* Date+Extensions.swift */; };
-		1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806476E21A8D05500D77935 /* MessageTableViewCell.swift */; };
-		1806477321A8D06900D77935 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1806477221A8D06900D77935 /* MessageTableViewCell.xib */; };
 		1806477521A8D07F00D77935 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477421A8D07F00D77935 /* Message.swift */; };
 		1806477C21A9104800D77935 /* sample-messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 1806477B21A9104800D77935 /* sample-messages.json */; };
 		1806478021A911BE00D77935 /* MessageDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806477F21A911BE00D77935 /* MessageDef.swift */; };
 		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
 		1A373BAB21B87239005A1C60 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BAA21B87239005A1C60 /* MessagesViewController.swift */; };
+		1A373BB521B909F4005A1C60 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BB421B909F4005A1C60 /* MessageCell.swift */; };
 		1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52766021B350E6004C48C2 /* WelcomeViewController.swift */; };
 		1AB666FF21B3A37D00CD6C62 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */; };
 		1AB6670121B3C53400CD6C62 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670021B3C53400CD6C62 /* Store.swift */; };
@@ -45,13 +44,12 @@
 /* Begin PBXFileReference section */
 		1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePainspace-Bridging-Header.h"; sourceTree = "<group>"; };
 		1806476B21A8D02400D77935 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		1806476E21A8D05500D77935 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		1806477221A8D06900D77935 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		1806477421A8D07F00D77935 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1806477B21A9104800D77935 /* sample-messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sample-messages.json"; sourceTree = "<group>"; };
 		1806477F21A911BE00D77935 /* MessageDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDef.swift; sourceTree = "<group>"; };
 		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A373BAA21B87239005A1C60 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		1A373BB421B909F4005A1C60 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		1A52763321B258A0004C48C2 /* ModelNetworking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ModelNetworking.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1A52766021B350E6004C48C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -97,39 +95,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1806476821A8CFD300D77935 /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				1806477421A8D07F00D77935 /* Message.swift */,
-				1806476D21A8D04D00D77935 /* Views */,
-			);
-			path = Messages;
-			sourceTree = "<group>";
-		};
 		1806476921A8D01500D77935 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				1806476B21A8D02400D77935 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		1806476D21A8D04D00D77935 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1806476E21A8D05500D77935 /* MessageTableViewCell.swift */,
-				1806477221A8D06900D77935 /* MessageTableViewCell.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1806477A21A9100B00D77935 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1806477B21A9104800D77935 /* sample-messages.json */,
-				1806477F21A911BE00D77935 /* MessageDef.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1AF64CCF21A78639003F4431 = {
@@ -161,10 +132,11 @@
 				1AF64CE621A7863B003F4431 /* LaunchScreen.storyboard */,
 				1A18823521A8CA5E00A56A52 /* Localizable.strings */,
 				1AF64CEA21A7863B003F4431 /* main.m */,
-				1806476821A8CFD300D77935 /* Messages */,
+				1806477421A8D07F00D77935 /* Message.swift */,
+				1A373BB421B909F4005A1C60 /* MessageCell.swift */,
+				1806477F21A911BE00D77935 /* MessageDef.swift */,
 				1AB6670221B4F08E00CD6C62 /* MessagesSchedule.swift */,
 				1A373BAA21B87239005A1C60 /* MessagesViewController.swift */,
-				1806477A21A9100B00D77935 /* Model */,
 				1A52763321B258A0004C48C2 /* ModelNetworking.playground */,
 				1AF64D0421A7CFB3003F4431 /* PSAppDelegate.h */,
 				1AF64D0521A7CFB3003F4431 /* PSAppDelegate.m */,
@@ -176,6 +148,7 @@
 				1AF64D1021A7FB70003F4431 /* PSTransitioningContext.m */,
 				1AF64D0C21A7F9DC003F4431 /* PSTransitioningViewController.h */,
 				1AF64D0D21A7F9DC003F4431 /* PSTransitioningViewController.m */,
+				1806477B21A9104800D77935 /* sample-messages.json */,
 				1AB6670021B3C53400CD6C62 /* Store.swift */,
 				1806476A21A8D02300D77935 /* ThePainspace-Bridging-Header.h */,
 				1AB6670421B64D3F00CD6C62 /* UserNotificationService.swift */,
@@ -277,7 +250,6 @@
 			files = (
 				1AF64CE821A7863B003F4431 /* LaunchScreen.storyboard in Resources */,
 				1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */,
-				1806477321A8D06900D77935 /* MessageTableViewCell.xib in Resources */,
 				1AF64CE521A7863B003F4431 /* Assets.xcassets in Resources */,
 				1806477C21A9104800D77935 /* sample-messages.json in Resources */,
 			);
@@ -306,9 +278,9 @@
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
 				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
 				1A373BAB21B87239005A1C60 /* MessagesViewController.swift in Sources */,
+				1A373BB521B909F4005A1C60 /* MessageCell.swift in Sources */,
 				1AB6670821B7FCA800CD6C62 /* IntroViewController.swift in Sources */,
 				1AB6670321B4F08E00CD6C62 /* MessagesSchedule.swift in Sources */,
-				1806476F21A8D05500D77935 /* MessageTableViewCell.swift in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
 				1806477521A8D07F00D77935 /* Message.swift in Sources */,
 				1AB6670121B3C53400CD6C62 /* Store.swift in Sources */,

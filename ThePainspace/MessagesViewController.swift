@@ -19,11 +19,13 @@ class MessagesViewController: UIViewController {
     
     var tableView: UITableView?
     
+    var collectionView: UICollectionView?
+    
     override func loadView() {
         let mainView = UIView()
         self.view = mainView
         
-        let backgroundImage = UIImageView.init(image: UIImage.init(named: "DefaultBackground"))
+        let backgroundImage = UIImageView.init(image: UIImage(named: "DefaultBackground"))
         mainView.addSubview(backgroundImage)
         backgroundImage.contentMode = .scaleAspectFill
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
@@ -32,19 +34,22 @@ class MessagesViewController: UIViewController {
         backgroundImage.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
         backgroundImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
 
-        self.tableView = UITableView()
-        mainView.addSubview(tableView!)
-        tableView!.backgroundColor = UIColor.clear
-        tableView!.separatorStyle = .none
-        tableView!.allowsSelection = false
-        tableView!.translatesAutoresizingMaskIntoConstraints = false
-        tableView!.leadingAnchor.constraint(equalTo: mainView.leadingAnchor).isActive = true
-        tableView!.trailingAnchor.constraint(equalTo: mainView.trailingAnchor).isActive = true
-        tableView!.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
-        tableView!.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        self.collectionView = collectionView
+        collectionView.delegate = self
+        mainView.addSubview(collectionView)
+        collectionView.alwaysBounceVertical = true
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
 
-        tableView!.register(UINib(nibName: String(describing: MessageTableViewCell.self), bundle: nil), forCellReuseIdentifier: NSStringFromClass(MessageTableViewCell.self))
-        tableView!.dataSource = self
+        collectionView.register(MessageCell.self, forCellWithReuseIdentifier: NSStringFromClass(MessageCell.self))
+        collectionView.dataSource = self
         
         self.navigationItem.titleView = buildTitleView()
     }
@@ -59,34 +64,49 @@ class MessagesViewController: UIViewController {
     
     func buildTitleView() -> UIView {
         let titleView = UIView()
+        titleView.backgroundColor = UIColor.clear
         
         let logoImage = UIImage(named: "ThePainspaceLogo")
         let logoView = UIImageView(image: logoImage)
+        logoView.backgroundColor = UIColor.clear
         titleView.addSubview(logoView)
         
         logoView.translatesAutoresizingMaskIntoConstraints = false
         let logoImageRatio = logoImage!.size.width / logoImage!.size.height
         logoView.widthAnchor.constraint(equalTo: logoView.heightAnchor, multiplier: logoImageRatio).isActive = true
         
-        logoView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 4.0).isActive = true
-        logoView.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -4.0).isActive = true
+        logoView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 0.0).isActive = true
+        logoView.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: 0.0).isActive = true
         logoView.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 4.0).isActive = true
-        logoView.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -4.0).isActive = true
+        logoView.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -8.0).isActive = true
 
         return titleView
     }
 }
 
-extension MessagesViewController: UITableViewDataSource
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MessagesViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return section == 0 ? messages.count : 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(MessageTableViewCell.self), for: indexPath) as! MessageTableViewCell
-        let message = messages[indexPath.row]
-        cell.configure(forMessage: message)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(MessageCell.self), for: indexPath) as! MessageCell
+        cell.message = messages[indexPath.row]
+        cell.availableWidth = collectionView.bounds.width - 24.0
         return cell
     }
+    
+}
+
+extension MessagesViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16.0, left: 12.0, bottom: 16.0, right: 12.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16.0
+    }
+
 }

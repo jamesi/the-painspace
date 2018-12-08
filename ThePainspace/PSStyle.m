@@ -12,12 +12,18 @@
 
 + (void)configureAppearance
 {
+    [[UILabel appearance] setFont:[self preferredFontForTextStyle:UIFontTextStyleBody]];
+
     UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:14.0 fillColor:[PSStyle buttonBackgroundColor]];
     [[UIButton appearance] setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
     [[UIButton appearance] setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];
     [[UIButton appearance] setContentEdgeInsets:UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0)];
-    [[UILabel appearance] setFont:[self preferredFontForTextStyle:UIFontTextStyleBody]];
-
+    
+    UIImage *navigationBarBackgroundImage = [self scaledImage:[UIImage imageNamed:@"DefaultBackground"] toWidth:[UIScreen mainScreen].bounds.size.width];
+    [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    UIColor *shadowColor = [[self colorWithRGB:0xb8b8b8] colorWithAlphaComponent:0.5];
+    UIImage *shadowImage = [self resizableImageOfRoundedRectWithCornerRadius:0.0 fillColor:shadowColor];
+    [[UINavigationBar appearance] setShadowImage:shadowImage];
 }
 
 @end
@@ -95,6 +101,11 @@
     return [self colorWithRGB:0x47525e];
 }
 
++ (UIColor *)navigationBarBackgroundColor
+{
+    return [self colorWithRGB:0xe6e6e6];
+}
+
 + (UIColor *)colorWithRGB:(NSInteger)value
 {
     CGFloat red = ((value & 0xff0000) >> 16) / 255.0;
@@ -125,6 +136,17 @@
     UIGraphicsEndImageContext();
     CGFloat insetSize = cornerRadius; // to leave one stretchable point
     return [image resizableImageWithCapInsets:UIEdgeInsetsMake(insetSize, insetSize, insetSize, insetSize)];
+}
+
++ (UIImage *)scaledImage:(UIImage *)image toWidth:(CGFloat)width
+{
+    CGFloat scaleFactor = width / image.size.width;
+    CGSize imageSize = CGSizeMake(image.size.width * scaleFactor, image.size.height * scaleFactor);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0f);
+    [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    UIImage *outImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return outImage;
 }
 
 @end
