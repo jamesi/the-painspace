@@ -13,17 +13,20 @@
 + (void)configureAppearance
 {
     [[UILabel appearance] setFont:[self preferredFontForTextStyle:UIFontTextStyleBody]];
-
-    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:14.0 fillColor:[PSStyle buttonBackgroundColor]];
-    [[UIButton appearance] setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
-    [[UIButton appearance] setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];
-    [[UIButton appearance] setContentEdgeInsets:UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0)];
-    
+ 
     UIImage *navigationBarBackgroundImage = [self scaledImage:[UIImage imageNamed:@"DefaultBackground"] toWidth:[UIScreen mainScreen].bounds.size.width];
     [[UINavigationBar appearance] setBackgroundImage:navigationBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
     UIColor *shadowColor = [[self colorWithRGB:0xb8b8b8] colorWithAlphaComponent:0.5];
     UIImage *shadowImage = [self resizableImageOfRoundedRectWithCornerRadius:0.0 fillColor:shadowColor];
     [[UINavigationBar appearance] setShadowImage:shadowImage];
+}
+
++ (void)configureRoundedRectButton:(UIButton *)button
+{
+    UIImage *buttonBackgroundImage = [PSStyle resizableImageOfRoundedRectWithCornerRadius:14.0 fillColor:[PSStyle buttonBackgroundColor]];
+    [button setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+    [button setTitleColor:[PSStyle lightTextColor] forState:UIControlStateNormal];
+    [button setContentEdgeInsets:UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0)];
 }
 
 @end
@@ -65,6 +68,11 @@
 @end
 
 @implementation PSStyle (Color)
+
++ (UIColor *)tintColor
+{
+    return [self darkTextColor];
+}
 
 + (UIColor *)lightTextColor
 {

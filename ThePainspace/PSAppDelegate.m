@@ -34,6 +34,7 @@ static BOOL PSAppDelegateIsRunningTests(void)
     [PSStyle configureAppearance];
         
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.tintColor = [PSStyle tintColor];
     
     PSTransitioningViewController *mainViewController = [PSTransitioningViewController new];
     self.coordinator = [[Coordinator alloc] init:mainViewController];

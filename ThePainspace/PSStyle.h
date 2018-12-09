@@ -14,9 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)configureAppearance;
 
++ (void)configureRoundedRectButton:(UIButton *)button;
+
 @end
 
 @interface PSStyle (Color)
+
++ (UIColor *)tintColor;
 
 + (UIColor *)lightTextColor;
 

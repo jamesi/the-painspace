@@ -52,6 +52,7 @@ import UIKit
         bodyLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
         let continueButton = UIButton()
+        PSStyle.configureRoundedRectButton(continueButton)
         continueButton.setTitle(NSLocalizedString("WELCOME_CONTINUE", comment: ""), for: .normal)
         continueButton.titleLabel?.font = PSStyle.preferredFont(forTextStyle: .body)
         continueButton.setContentHuggingPriority(.defaultHigh, for: .vertical)

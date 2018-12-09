@@ -52,16 +52,9 @@ class MessagesViewController: UIViewController {
         collectionView.dataSource = self
         
         self.navigationItem.titleView = buildTitleView()
+        self.navigationItem.rightBarButtonItem = buildInfoBarButtonItem()
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
+
     func buildTitleView() -> UIView {
         let titleView = UIView()
         titleView.backgroundColor = UIColor.clear
@@ -81,6 +74,17 @@ class MessagesViewController: UIViewController {
         logoView.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -8.0).isActive = true
 
         return titleView
+    }
+    
+    func buildInfoBarButtonItem() -> UIBarButtonItem {
+//        let image = UIImage(named: "");
+//        let item = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(infoButtonSelected))
+        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(infoButtonSelected))
+        return item
+    }
+    
+    @objc func infoButtonSelected() {
+//        self.delegate?.messagesViewControllerDidSelectInfo()
     }
 }
 
