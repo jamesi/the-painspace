@@ -50,6 +50,7 @@
 		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A373BAA21B87239005A1C60 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		1A373BB421B909F4005A1C60 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		1A373BCB21BD0812005A1C60 /* Diff.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Diff.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1A52763321B258A0004C48C2 /* ModelNetworking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ModelNetworking.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1A52766021B350E6004C48C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 			children = (
 				1AF64CE421A7863B003F4431 /* Assets.xcassets */,
 				1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */,
+				1A373BCB21BD0812005A1C60 /* Diff.playground */,
 				1806476921A8D01500D77935 /* Extensions */,
 				1AF64CE921A7863B003F4431 /* Info.plist */,
 				1AB6670721B7FCA800CD6C62 /* IntroViewController.swift */,
