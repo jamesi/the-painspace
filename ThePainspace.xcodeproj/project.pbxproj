@@ -14,6 +14,8 @@
 		1A18823721A8CA5E00A56A52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A18823521A8CA5E00A56A52 /* Localizable.strings */; };
 		1A373BAB21B87239005A1C60 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BAA21B87239005A1C60 /* MessagesViewController.swift */; };
 		1A373BB521B909F4005A1C60 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BB421B909F4005A1C60 /* MessageCell.swift */; };
+		1A373BD021BFD0E6005A1C60 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BCF21BFD0E6005A1C60 /* Diff.swift */; };
+		1A373BFF21BFD324005A1C60 /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BFE21BFD324005A1C60 /* DiffTests.swift */; };
 		1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52766021B350E6004C48C2 /* WelcomeViewController.swift */; };
 		1AB666FF21B3A37D00CD6C62 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */; };
 		1AB6670121B3C53400CD6C62 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670021B3C53400CD6C62 /* Store.swift */; };
@@ -50,7 +52,8 @@
 		1A18823621A8CA5E00A56A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A373BAA21B87239005A1C60 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		1A373BB421B909F4005A1C60 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		1A373BCB21BD0812005A1C60 /* Diff.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Diff.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1A373BCF21BFD0E6005A1C60 /* Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		1A373BFE21BFD324005A1C60 /* DiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffTests.swift; sourceTree = "<group>"; };
 		1A52763321B258A0004C48C2 /* ModelNetworking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ModelNetworking.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1A52766021B350E6004C48C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -104,6 +107,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1A373BCE21BFD0D2005A1C60 /* AppUtil */ = {
+			isa = PBXGroup;
+			children = (
+				1A373BCF21BFD0E6005A1C60 /* Diff.swift */,
+			);
+			path = AppUtil;
+			sourceTree = "<group>";
+		};
+		1A373C0021BFD487005A1C60 /* AppUtil */ = {
+			isa = PBXGroup;
+			children = (
+				1A373BFE21BFD324005A1C60 /* DiffTests.swift */,
+			);
+			path = AppUtil;
+			sourceTree = "<group>";
+		};
 		1AF64CCF21A78639003F4431 = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +144,9 @@
 		1AF64CDA21A78639003F4431 /* ThePainspace */ = {
 			isa = PBXGroup;
 			children = (
+				1A373BCE21BFD0D2005A1C60 /* AppUtil */,
 				1AF64CE421A7863B003F4431 /* Assets.xcassets */,
 				1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */,
-				1A373BCB21BD0812005A1C60 /* Diff.playground */,
 				1806476921A8D01500D77935 /* Extensions */,
 				1AF64CE921A7863B003F4431 /* Info.plist */,
 				1AB6670721B7FCA800CD6C62 /* IntroViewController.swift */,
@@ -164,6 +183,7 @@
 			children = (
 				1AF64CF621A7863C003F4431 /* Info.plist */,
 				1AF64CF421A7863C003F4431 /* ThePainspaceTests.m */,
+				1A373C0021BFD487005A1C60 /* AppUtil */,
 			);
 			path = ThePainspaceTests;
 			sourceTree = "<group>";
@@ -222,6 +242,7 @@
 					};
 					1AF64CEF21A7863C003F4431 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 1AF64CD721A78639003F4431;
 					};
 				};
@@ -277,6 +298,7 @@
 				1AB666FF21B3A37D00CD6C62 /* Coordinator.swift in Sources */,
 				1AB6670521B64D3F00CD6C62 /* UserNotificationService.swift in Sources */,
 				1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */,
+				1A373BD021BFD0E6005A1C60 /* Diff.swift in Sources */,
 				1806476C21A8D02400D77935 /* Date+Extensions.swift in Sources */,
 				1806478021A911BE00D77935 /* MessageDef.swift in Sources */,
 				1A373BAB21B87239005A1C60 /* MessagesViewController.swift in Sources */,
@@ -295,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A373BFF21BFD324005A1C60 /* DiffTests.swift in Sources */,
 				1AF64CF521A7863C003F4431 /* ThePainspaceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +512,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ThePainspaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -498,6 +522,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sample.ThePainspaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThePainspace.app/ThePainspace";
 			};
@@ -508,6 +534,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ThePainspaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,6 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sample.ThePainspaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThePainspace.app/ThePainspace";
 			};

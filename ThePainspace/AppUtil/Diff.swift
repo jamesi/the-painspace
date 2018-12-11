@@ -1,3 +1,11 @@
+//
+//  Diff.swift
+//  ThePainspace
+//
+//  Created by James Ireland on 11/12/2018.
+//  Copyright © 2018 James Ireland. Available under the MIT license.
+//
+
 import Foundation
 
 typealias Index = Int
@@ -17,7 +25,7 @@ func elementIndexes<E>(for array: [E]) -> [E: Index] where E: Hashable {
 }
 
 func diff<E>(from: [E], to: [E]) -> Diff where E: Hashable {
-
+    
     let fromIndexes = elementIndexes(for: from)
     let toIndexes = elementIndexes(for: to)
     
@@ -34,7 +42,7 @@ func diff<E>(from: [E], to: [E]) -> Diff where E: Hashable {
             result.deletes.append(index)
         }
     }
-
+    
     // find inserted items
     for (index, item) in to.enumerated() {
         if fromIndexes[item] == nil {
@@ -45,16 +53,3 @@ func diff<E>(from: [E], to: [E]) -> Diff where E: Hashable {
     
     return result
 }
-
-let from = [0, 1, 2, 3]
-let to = [2, 1, 0, 4]
-
-let result = diff(from: from, to: to)
-
-print(result)
-
-let from_s = ["Zero", "One", "Two", "Three"]
-let to_s = ["Two", "One", "Zero", "Four"]
-let result_s = diff(from: from_s, to: to_s)
-
-print(result_s)
