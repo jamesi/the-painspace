@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol WelcomeViewControllerDelegate: class {
     func welcomeViewControllerDidSelectContinue()
+    func welcomeViewControllerDidSelectTerms()
 }
 
 @objc class WelcomeViewController: UIViewController {

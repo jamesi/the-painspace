@@ -89,6 +89,7 @@ import UserNotifications
             let viewController = MessagesViewController()
             viewController.messages = messageScheduler.pastMessagesUntil(date: Date())
             let navigationController = UINavigationController(rootViewController: viewController)
+            viewController.delegate = self
             self.messagesViewController = viewController
             return navigationController
         }
@@ -135,5 +136,16 @@ extension Coordinator: WelcomeViewControllerDelegate {
         self.messageScheduler.start = Store.messagesScheduleStart
         UserNotificationService.requestAuthorization()
         continueMainSequence()
+    }
+    
+    func welcomeViewControllerDidSelectTerms() {
+        
+    }
+}
+
+extension Coordinator: MessagesViewControllerDelegate {
+    
+    func messagesViewControllerDidSelectInfo() {
+        
     }
 }

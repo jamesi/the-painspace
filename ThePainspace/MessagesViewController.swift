@@ -5,8 +5,14 @@
 
 import UIKit
 
+@objc protocol MessagesViewControllerDelegate: class {
+    func messagesViewControllerDidSelectInfo()
+}
+
 class MessagesViewController: UIViewController {
 
+    @objc weak var delegate: MessagesViewControllerDelegate? = nil
+    
     @objc var messages: [Message] = [] {
         didSet {
             tableView?.reloadData()
@@ -77,14 +83,13 @@ class MessagesViewController: UIViewController {
     }
     
     func buildInfoBarButtonItem() -> UIBarButtonItem {
-//        let image = UIImage(named: "");
-//        let item = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(infoButtonSelected))
-        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(infoButtonSelected))
+        let image = UIImage(named: "InfoIcon");
+        let item = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(infoButtonSelected))
         return item
     }
     
     @objc func infoButtonSelected() {
-//        self.delegate?.messagesViewControllerDidSelectInfo()
+        self.delegate?.messagesViewControllerDidSelectInfo()
     }
 }
 
