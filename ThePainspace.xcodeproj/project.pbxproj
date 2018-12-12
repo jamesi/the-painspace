@@ -16,6 +16,7 @@
 		1A373BB521B909F4005A1C60 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BB421B909F4005A1C60 /* MessageCell.swift */; };
 		1A373BD021BFD0E6005A1C60 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BCF21BFD0E6005A1C60 /* Diff.swift */; };
 		1A373BFF21BFD324005A1C60 /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373BFE21BFD324005A1C60 /* DiffTests.swift */; };
+		1A373C0221C0128D005A1C60 /* MessagesHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A373C0121C0128D005A1C60 /* MessagesHistory.swift */; };
 		1A52766121B350E6004C48C2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52766021B350E6004C48C2 /* WelcomeViewController.swift */; };
 		1AB666FF21B3A37D00CD6C62 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */; };
 		1AB6670121B3C53400CD6C62 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6670021B3C53400CD6C62 /* Store.swift */; };
@@ -54,6 +55,7 @@
 		1A373BB421B909F4005A1C60 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		1A373BCF21BFD0E6005A1C60 /* Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
 		1A373BFE21BFD324005A1C60 /* DiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffTests.swift; sourceTree = "<group>"; };
+		1A373C0121C0128D005A1C60 /* MessagesHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHistory.swift; sourceTree = "<group>"; };
 		1A52763321B258A0004C48C2 /* ModelNetworking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ModelNetworking.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1A52766021B350E6004C48C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1AB666FE21B3A37D00CD6C62 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				1806477421A8D07F00D77935 /* Message.swift */,
 				1A373BB421B909F4005A1C60 /* MessageCell.swift */,
 				1806477F21A911BE00D77935 /* MessageDef.swift */,
+				1A373C0121C0128D005A1C60 /* MessagesHistory.swift */,
 				1AB6670221B4F08E00CD6C62 /* MessagesSchedule.swift */,
 				1A373BAA21B87239005A1C60 /* MessagesViewController.swift */,
 				1A52763321B258A0004C48C2 /* ModelNetworking.playground */,
@@ -307,6 +310,7 @@
 				1AB6670321B4F08E00CD6C62 /* MessagesSchedule.swift in Sources */,
 				1AC1178521A96E370011892F /* PSStyle.m in Sources */,
 				1806477521A8D07F00D77935 /* Message.swift in Sources */,
+				1A373C0221C0128D005A1C60 /* MessagesHistory.swift in Sources */,
 				1AB6670121B3C53400CD6C62 /* Store.swift in Sources */,
 				1AF64CEB21A7863B003F4431 /* main.m in Sources */,
 				1AF64D1421A7FB7F003F4431 /* PSFadeTransition.m in Sources */,

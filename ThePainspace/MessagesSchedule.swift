@@ -28,7 +28,7 @@ final class MessagesSchedule {
     
     private var messages: [Message] {
         didSet {
-            NotificationCenter.default.post(name: MessagesSchedule.changedNotification, object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: MessagesSchedule.changedNotification, object: self)
         }
     }
     
@@ -77,6 +77,6 @@ private func dateForMessage(index: Int, fromStart: Date) -> Date
     // todo: replace with real date calculation algorithm
     // demo sequence messages at 20 second intervals after start date
     var components = Calendar.current.dateComponents(MessagesSchedule.calendarUnits, from: fromStart)
-    components.second = components.second! + (index + 1) * 20
+    components.second = components.second! + (index + 1) * 5
     return components.date!
 }

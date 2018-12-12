@@ -5,27 +5,48 @@
 
 import UIKit
 
-@objc protocol MessagesViewControllerDelegate: class {
+protocol MessagesViewControllerDelegate: class {
     func messagesViewControllerDidSelectInfo()
 }
 
 class MessagesViewController: UIViewController {
 
-    @objc weak var delegate: MessagesViewControllerDelegate? = nil
+    let messagesHistory: MessagesHistory
     
-    @objc var messages: [Message] = [] {
+    weak var delegate: MessagesViewControllerDelegate? = nil
+    
+    var messages: [Message] = [] {
         didSet {
-            tableView?.reloadData()
+            print("\(oldValue.count) old messages to \(messages.count) new messages")
+            performUpdates(fromMessages: oldValue, toMessages: messages)
         }
     }
     
-    // todo: insert new rows via diff
     // todo: scroll to end
     // todo: scroll to selected notification message
     
-    var tableView: UITableView?
-    
     var collectionView: UICollectionView?
+    
+    var observers: [NSObjectProtocol] = []
+    
+    init(messagesHistory: MessagesHistory) {
+        self.messagesHistory = messagesHistory
+        self.messages = messagesHistory.messages
+        super.init(nibName: nil, bundle: nil)
+        observers.append(NotificationCenter.default.addObserver(forName: messagesHistory.changedNotification, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
+            self?.handleMessagesHistoryChanged()
+        })
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+    
+    deinit {
+        for observer in self.observers {
+            NotificationCenter.default.removeObserver(observer)
+        }
+    }
     
     override func loadView() {
         let mainView = UIView()
@@ -41,7 +62,7 @@ class MessagesViewController: UIViewController {
         backgroundImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
 
         let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.estimatedItemSize = CGSize(width: 1.0, height: 1.0)
+        collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         self.collectionView = collectionView
         collectionView.delegate = self
@@ -87,9 +108,33 @@ class MessagesViewController: UIViewController {
         let item = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(infoButtonSelected))
         return item
     }
+
+    func performUpdates(fromMessages:[Message], toMessages:[Message]) {
+        let d = diff(from: fromMessages, to: toMessages)
+        if (d.inserts.count > 0) {
+            collectionView?.insertItems(at: indexPaths(forIndexes: d.inserts))
+        }
+        if (d.deletes.count > 0) {
+            collectionView?.deleteItems(at: indexPaths(forIndexes: d.deletes))
+        }
+        if (d.moves.count > 0) {
+            for (from, to) in d.moves {
+                collectionView?.moveItem(at: IndexPath(item: from, section: 0), to: IndexPath(item: to, section: 0))
+            }
+        }
+    }
+    
+    func indexPaths(forIndexes indexes:[Int]) -> [IndexPath] {
+        return indexes.map { return IndexPath(item: $0, section: 0) }
+    }
     
     @objc func infoButtonSelected() {
         self.delegate?.messagesViewControllerDidSelectInfo()
+    }
+    
+    func handleMessagesHistoryChanged() {
+        print("handleMessagesHistoryChanged")
+        self.messages = messagesHistory.messages
     }
 }
 

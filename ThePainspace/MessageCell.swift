@@ -29,6 +29,7 @@ class MessageCell: UICollectionViewCell {
     var availableWidth: CGFloat? {
         didSet {
             self.widthConstraint?.constant = calculateWidth()
+            self.setNeedsLayout()
         }
     }
     
@@ -71,6 +72,8 @@ class MessageCell: UICollectionViewCell {
         messageColumn.spacing = 10.0
         self.contentView.addSubview(messageColumn)
         
+        messageColumn.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        
         messageColumn.translatesAutoresizingMaskIntoConstraints = false
         messageColumn.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 14.0).isActive = true
         messageColumn.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -14.0).isActive = true
@@ -85,4 +88,5 @@ class MessageCell: UICollectionViewCell {
     func calculateWidth() -> CGFloat {
         return max(availableWidth ?? 0.0, minimumFrame.width)
     }
+    
 }

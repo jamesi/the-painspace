@@ -24,11 +24,13 @@ import UserNotifications
         case messages
     }
     
-    let rootViewController: PSTransitioningViewController
+    private let rootViewController: PSTransitioningViewController
     
-    let messageScheduler = MessagesSchedule(messageDefs: Store.messageDefs, start: Store.messagesScheduleStart)
+    private let messagesSchedule = MessagesSchedule(messageDefs: Store.messageDefs, start: Store.messagesScheduleStart)
 
-    var screen: Screen = .intro0 {
+    private lazy var messagesHistory: MessagesHistory = MessagesHistory(messagesSchedule: self.messagesSchedule, referenceDate: Date())
+    
+    private var screen: Screen = .intro0 {
         didSet {
             if (screen.rawValue > Screen.intro7.rawValue) {
                 Store.hasCompletedIntro = true
@@ -37,9 +39,9 @@ import UserNotifications
         }
     }
 
-    var observers: [NSObjectProtocol] = []
+    private var observers: [NSObjectProtocol] = []
     
-    weak var messagesViewController: MessagesViewController?
+    private weak var messagesViewController: MessagesViewController?
     
     @objc init(_ rootViewController: PSTransitioningViewController) {
         self.rootViewController = rootViewController
@@ -48,8 +50,7 @@ import UserNotifications
         self.rootViewController.setViewController(self.viewControllerFor(screen: self.screen), animated: false)
 
         UNUserNotificationCenter.current().delegate = self
-
-        UserNotificationService.addNotificationRequests(for: messageScheduler.futureMessagesAfter(date: Date()))
+        UserNotificationService.addNotificationRequests(for: messagesSchedule.futureMessagesAfter(date: Date()))
 
         observers.append(NotificationCenter.default.addObserver(forName: MessagesSchedule.changedNotification, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
             self?.handleMessagesScheduleChanged()
@@ -86,8 +87,7 @@ import UserNotifications
             viewController.delegate = self
             return viewController
         case .messages:
-            let viewController = MessagesViewController()
-            viewController.messages = messageScheduler.pastMessagesUntil(date: Date())
+            let viewController = MessagesViewController(messagesHistory: self.messagesHistory)
             let navigationController = UINavigationController(rootViewController: viewController)
             viewController.delegate = self
             self.messagesViewController = viewController
@@ -102,21 +102,17 @@ import UserNotifications
     }
     
     func handleMessagesScheduleChanged() {
-        UserNotificationService.addNotificationRequests(for: messageScheduler.futureMessagesAfter(date: Date()))
-    }
-    
-    func handleUserNotificationWillPresent() {
-        if let messagesViewController = self.messagesViewController {
-            messagesViewController.messages = messageScheduler.pastMessagesUntil(date: Date())
-        }
+        let futureMessages = messagesSchedule.futureMessagesAfter(date: Date())
+        UserNotificationService.addNotificationRequests(for: futureMessages)
     }
 }
 
 extension Coordinator: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(UNNotificationPresentationOptions.alert)
-        handleUserNotificationWillPresent()
+        completionHandler(UNNotificationPresentationOptions.sound)
+        
+        self.messagesHistory.referenceDate = Date()
     }
     
 }
@@ -126,6 +122,7 @@ extension Coordinator: IntroViewControllerDelegate {
     func introViewControllerDidFinish() {
         continueMainSequence()
     }
+    
 }
 
 extension Coordinator: WelcomeViewControllerDelegate {
@@ -133,7 +130,7 @@ extension Coordinator: WelcomeViewControllerDelegate {
     func welcomeViewControllerDidSelectContinue() {
         Store.messagesScheduleStart = Date()
         // todo: should messageScheduler start date be updated via notification from store?
-        self.messageScheduler.start = Store.messagesScheduleStart
+        self.messagesSchedule.start = Store.messagesScheduleStart
         UserNotificationService.requestAuthorization()
         continueMainSequence()
     }
@@ -141,6 +138,7 @@ extension Coordinator: WelcomeViewControllerDelegate {
     func welcomeViewControllerDidSelectTerms() {
         
     }
+    
 }
 
 extension Coordinator: MessagesViewControllerDelegate {
@@ -148,4 +146,5 @@ extension Coordinator: MessagesViewControllerDelegate {
     func messagesViewControllerDidSelectInfo() {
         
     }
+    
 }
